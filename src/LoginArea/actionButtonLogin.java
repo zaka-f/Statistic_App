@@ -3,6 +3,8 @@ package LoginArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import mainUI.MainUI;
+
 public class actionButtonLogin implements ActionListener{
 
 	public actionButtonLogin() {
@@ -15,7 +17,7 @@ public class actionButtonLogin implements ActionListener{
 		credentialChecker checker = new credentialChecker(LoginPage.getUsername().getText(), LoginPage.getPassword().getText());
 		boolean access = checker.isUser();
 		if(access) {
-			//lunch the app
+//			new MainUI();
 		}
 		else {
 			displayMessageLoginUI.updateLoginUI();
