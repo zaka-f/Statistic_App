@@ -63,6 +63,7 @@ public class LoginPage extends JFrame  {
 	//end of getter and setter methods
 	
 	//constructor
+	@SuppressWarnings("deprecation")
 	LoginPage(){
 		
 		//password label
@@ -106,8 +107,8 @@ public class LoginPage extends JFrame  {
 		//set the position of the button
 		button.setBounds(100, 115, 80, 25);
 		panel.add(button);
-		button.addActionListener(new actionButtonLogin());
-		
+		button.addActionListener(new actionButtonLogin(username.getText(),password.getText()));
+		System.out.print("here");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//setting the panel in the frame

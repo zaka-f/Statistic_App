@@ -5,15 +5,22 @@ import java.awt.event.ActionListener;
 
 public class actionButtonLogin implements ActionListener{
 
-	private String username = LoginPage.getUsername().getText(); 
+	private String username; 
 	
-	@SuppressWarnings("deprecation")
-	private String password = LoginPage.getPassword().getText();
+	private String password;
 	
+
+	public actionButtonLogin(String username, String password) {
+		this.username = username;
+		this.password = password;
+	}
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		new credentialChecker(username, password);	
+		System.out.print("here");
+		credentialChecker checker = new credentialChecker(username, password);
+		checker.isUser();
 	}
 
 }
