@@ -12,55 +12,14 @@ public class LoginPage extends JFrame  {
 	private static JPasswordField password;
 	private static JPanel panel;
 	
-	//getter and setter methods
-	public static JLabel getPd() {
-		return pd;
-	}
-
-	public void setPd(JLabel pd) {
-		this.pd = pd;
-	}
-
-	public static JLabel getUn() {
-		return un;
-	}
-
-	public void setUn(JLabel un) {
-		this.un = un;
-	}
-
+	//getter methods
 	public static JTextField getUsername() {
 		return username;
 	}
-
-	public void setUsername(JTextField username) {
-		this.username = username;
-	}
-
-	public static JButton getButton() {
-		return button;
-	}
-
-	public void setButton(JButton button) {
-		this.button = button;
-	}
-
 	public static JPasswordField getPassword() {
 		return password;
 	}
 
-	public void setPassword(JPasswordField password) {
-		this.password = password;
-	}
-
-	public static JPanel getPanel() {
-		return panel;
-	}
-
-	public void setPanel(JPanel panel) {
-		this.panel = panel;
-	}
-	//end of getter and setter methods
 	
 	//constructor
 	@SuppressWarnings("deprecation")
@@ -107,8 +66,9 @@ public class LoginPage extends JFrame  {
 		//set the position of the button
 		button.setBounds(100, 115, 80, 25);
 		panel.add(button);
+		System.out.print(username.getText()+"\n");
+		System.out.print(password.getText()+"\n");
 		button.addActionListener(new actionButtonLogin(username.getText(),password.getText()));
-		System.out.print("here");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//setting the panel in the frame

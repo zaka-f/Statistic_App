@@ -19,20 +19,27 @@ public class credentialChecker {
 
 	boolean isUser() {
 		boolean isUser = false;
-		System.out.print("here");
 		JSONParser jsonP = new JSONParser();
 		
 	      try {
-	    	  JSONArray jsonA = (JSONArray)jsonP.parse(new FileReader("C:\\Users\\zakar\\eclipse-workspace\\Countries Statistics\\src\\LoginArea"));
+	    	  FileReader fr = new FileReader("C:\\Users\\zakar\\eclipse-workspace\\Countries Statistics\\credentialDatabase.txt");
+	    	  JSONObject jsonO = (JSONObject) jsonP.parse(fr);
 	      
+	    	  JSONArray jsonA = (JSONArray) jsonO.get("users");
+	    			  
 	    	  for (Object user : jsonA) {
 	    		  
 	    		  JSONObject tempUser = (JSONObject) user;
 	    		  
 	    		  String tempUsername = (String) tempUser.get("username");
+	    		  System.out.print(tempUsername+"\n");
+//	    		  System.out.print(username+"\n");
 	    		  String tempPassword = (String) tempUser.get("password");
+	    		  System.out.print(tempPassword+"\n");
+//	    		  System.out.print(password+"\n");
 	    		  
-	    		  if (tempUsername == username && tempPassword == password) isUser = true;
+	    		  
+	    		  if (tempUsername == username && tempPassword == password) { isUser = true;};
 	    		  
 	    		  
 	    	  }

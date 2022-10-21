@@ -18,7 +18,8 @@ public class actionButtonLogin implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.print("here");
+//		 System.out.print(username+"\n");
+//		 System.out.print(password+"\n");
 		credentialChecker checker = new credentialChecker(username, password);
 		checker.isUser();
 	}
