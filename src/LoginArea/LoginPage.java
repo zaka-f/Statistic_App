@@ -60,7 +60,7 @@ public class LoginPage extends JFrame  {
 	public void setPanel(JPanel panel) {
 		this.panel = panel;
 	}
-	//end of gettor and setter methods
+	//end of getter and setter methods
 	
 	//constructor
 	LoginPage(){
@@ -106,7 +106,7 @@ public class LoginPage extends JFrame  {
 		//set the position of the button
 		button.setBounds(100, 115, 80, 25);
 		panel.add(button);
-		button.addActionListener(new creditentialsCheker());
+		button.addActionListener(new actionButtonLogin());
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
