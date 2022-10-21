@@ -17,7 +17,10 @@ public class actionButtonLogin implements ActionListener{
 		credentialChecker checker = new credentialChecker(LoginPage.getUsername().getText(), LoginPage.getPassword().getText());
 		boolean access = checker.isUser();
 		if(access) {
-//			new MainUI();
+			UILuncher.nLoginPage.dispose();
+			new MainUI();
+			MainUI.main(null);
+			
 		}
 		else {
 			displayMessageLoginUI.updateLoginUI();

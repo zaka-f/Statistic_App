@@ -62,7 +62,7 @@ public class MainUI extends JFrame {
 		return instance;
 	}
 
-	private MainUI() {
+	public MainUI() {
 		// Set window title
 		super("Country Statistics");
 
