@@ -33,13 +33,14 @@ public class credentialChecker {
 	    		  
 	    		  String tempUsername = (String) tempUser.get("username");
 	    		  System.out.print(tempUsername+"\n");
-//	    		  System.out.print(username+"\n");
+	    		  System.out.print(username+"\n");
 	    		  String tempPassword = (String) tempUser.get("password");
 	    		  System.out.print(tempPassword+"\n");
-//	    		  System.out.print(password+"\n");
+	    		  System.out.print(password+"\n");
 	    		  
 	    		  
-	    		  if (tempUsername == username && tempPassword == password) { isUser = true;};
+	    		  if (tempUsername.equals(username) && tempPassword.equals(password)) {
+	    			  isUser = true;};
 	    		  
 	    		  
 	    	  }

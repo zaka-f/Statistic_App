@@ -66,9 +66,7 @@ public class LoginPage extends JFrame  {
 		//set the position of the button
 		button.setBounds(100, 115, 80, 25);
 		panel.add(button);
-		System.out.print(username.getText()+"\n");
-		System.out.print(password.getText()+"\n");
-		button.addActionListener(new actionButtonLogin(username.getText(),password.getText()));
+		button.addActionListener(new actionButtonLogin());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//setting the panel in the frame

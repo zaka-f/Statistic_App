@@ -5,22 +5,16 @@ import java.awt.event.ActionListener;
 
 public class actionButtonLogin implements ActionListener{
 
-	private String username; 
-	
-	private String password;
-	
+	public actionButtonLogin() {
 
-	public actionButtonLogin(String username, String password) {
-		this.username = username;
-		this.password = password;
 	}
 
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		 System.out.print(username+"\n");
-//		 System.out.print(password+"\n");
-		credentialChecker checker = new credentialChecker(username, password);
+//		 System.out.print(LoginPage.getPassword().getText()+"\n");
+//		 System.out.print(LoginPage.getUsername().getText()+"\n");
+		credentialChecker checker = new credentialChecker(LoginPage.getUsername().getText(), LoginPage.getPassword().getText());
 		checker.isUser();
 	}
 
