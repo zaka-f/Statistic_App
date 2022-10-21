@@ -87,11 +87,11 @@ public class LoginPage extends JFrame  {
 		panel = new JPanel();
 		panel.setLayout(null);
 		
-		//set the position of the usrname label
+		//set the position of the user name label
 		un.setBounds(10, 20, 80, 25);
 		panel.add(un);
 		
-		//set the position of the username textfield
+		//set the position of the user name text field
 		username.setBounds(100, 20, 165, 25);
 		panel.add(username);
 		
@@ -99,7 +99,7 @@ public class LoginPage extends JFrame  {
 		pd.setBounds(10, 65, 80, 25);
 		panel.add(pd);
 		
-		//set the position of the password textfield
+		//set the position of the password text field
 		password.setBounds(100, 65, 165, 25);
 		panel.add(password);
 		
@@ -117,13 +117,5 @@ public class LoginPage extends JFrame  {
 		setVisible(true);
 		
 	}	
-	
-	public static void main(String[] args) {
-		
-		new LoginPage();
-		
-	}
-	
-
 	
 }
