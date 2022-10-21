@@ -10,7 +10,7 @@ public class LoginPage extends JFrame  {
 	private static JTextField username;
 	private static JButton button;
 	private static JPasswordField password;
-	private static JPanel panel;
+	protected static JPanel panel;
 	
 	//getter methods
 	public static JTextField getUsername() {
@@ -22,7 +22,6 @@ public class LoginPage extends JFrame  {
 
 	
 	//constructor
-	@SuppressWarnings("deprecation")
 	LoginPage(){
 		
 		//password label

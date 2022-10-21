@@ -32,17 +32,10 @@ public class credentialChecker {
 	    		  JSONObject tempUser = (JSONObject) user;
 	    		  
 	    		  String tempUsername = (String) tempUser.get("username");
-	    		  System.out.print(tempUsername+"\n");
-	    		  System.out.print(username+"\n");
-	    		  String tempPassword = (String) tempUser.get("password");
-	    		  System.out.print(tempPassword+"\n");
-	    		  System.out.print(password+"\n");
-	    		  
+	    		  String tempPassword = (String) tempUser.get("password");	    		  
 	    		  
 	    		  if (tempUsername.equals(username) && tempPassword.equals(password)) {
-	    			  isUser = true;};
-	    		  
-	    		  
+	    			  isUser = true;};    		  
 	    	  }
 
 	       } catch (FileNotFoundException e) {

@@ -12,10 +12,14 @@ public class actionButtonLogin implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		 System.out.print(LoginPage.getPassword().getText()+"\n");
-//		 System.out.print(LoginPage.getUsername().getText()+"\n");
 		credentialChecker checker = new credentialChecker(LoginPage.getUsername().getText(), LoginPage.getPassword().getText());
-		checker.isUser();
+		boolean access = checker.isUser();
+		if(access) {
+			//lunch the app
+		}
+		else {
+			displayMessageLoginUI.updateLoginUI();
+		}
 	}
 
 }
