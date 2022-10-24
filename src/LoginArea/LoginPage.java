@@ -2,78 +2,81 @@ package LoginArea;
 
 import javax.swing.*;
 
+public class LoginPage extends JFrame {
 
-public class LoginPage extends JFrame  {
-
-	//Initialize buttons
-	private static JLabel pd, un;
+	// Initialize buttons
 	private static JTextField username;
 	private static JButton button;
 	private static JPasswordField password;
-	protected static JPanel panel;
-	
-	//getter methods
+	private static JPanel panel;
+	private static JLabel pd, un;
+
+	// getter methods
 	public static JTextField getUsername() {
 		return username;
 	}
+
 	public static JPasswordField getPassword() {
 		return password;
 	}
 
-	
-	//constructor
-	LoginPage(){
-		
-		//password label
+	public static JPanel getPanel() {
+		return panel;
+	}
+
+	// constructor
+	LoginPage() {
+
+		// password label
 		pd = new JLabel();
 		pd.setText("Password");
-		
-		//user name label 
+
+		// user name label
 		un = new JLabel();
 		un.setText("User Name");
-		
-		//login button
+
+		// login button
 		button = new JButton();
 		button.setText("Login");
-		
-		//password field
+
+		// password field
 		password = new JPasswordField();
-		
-		//JTextField user name;
+
+		// JTextField user name;
 		username = new JTextField();
-		
-		//Creating a panel
+
+		// Creating a panel
 		panel = new JPanel();
 		panel.setLayout(null);
-		
-		//set the position of the user name label
+
+		// set the position of the user name label
 		un.setBounds(10, 20, 80, 25);
 		panel.add(un);
-		
-		//set the position of the user name text field
+
+		// set the position of the user name text field
 		username.setBounds(100, 20, 165, 25);
 		panel.add(username);
-		
-		//set the position of the password label
+
+		// set the position of the password label
 		pd.setBounds(10, 65, 80, 25);
 		panel.add(pd);
-		
-		//set the position of the password text field
+
+		// set the position of the password text field
 		password.setBounds(100, 65, 165, 25);
 		panel.add(password);
-		
-		//set the position of the button
+
+		// set the position of the button
 		button.setBounds(100, 115, 80, 25);
 		panel.add(button);
 		button.addActionListener(new actionButtonLogin());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		//setting the panel in the frame
+
+		// setting the panel in the frame
 		add(panel);
 		setTitle("Login Page");
-		setSize(300,200);
+		setSize(300, 200);
 		setVisible(true);
-		
-	}	
-	
+
+	}
+
 }

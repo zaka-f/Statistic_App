@@ -8,46 +8,59 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class credentialChecker {
-	
-	 private String username;
-	 private String password;
 
-	public credentialChecker(String username, String password) {
+	// instance variables
+	private String username;
+	private String password;
+
+	// constructor
+	protected credentialChecker(String username, String password) {
 		this.username = username;
 		this.password = password;
 	}
 
+	// function that checks wether the user exists or not in the file
 	boolean isUser() {
-		boolean isUser = false;
-		JSONParser jsonP = new JSONParser();
-		
-	      try {
-	    	  FileReader fr = new FileReader("C:\\Users\\zakar\\eclipse-workspace\\Countries Statistics\\credentialDatabase.txt");
-	    	  JSONObject jsonO = (JSONObject) jsonP.parse(fr);
-	      
-	    	  JSONArray jsonA = (JSONArray) jsonO.get("users");
-	    			  
-	    	  for (Object user : jsonA) {
-	    		  
-	    		  JSONObject tempUser = (JSONObject) user;
-	    		  
-	    		  String tempUsername = (String) tempUser.get("username");
-	    		  String tempPassword = (String) tempUser.get("password");	    		  
-	    		  
-	    		  if (tempUsername.equals(username) && tempPassword.equals(password)) {
-	    			  isUser = true;};    		  
-	    	  }
 
-	       } catch (FileNotFoundException e) {
-	          e.printStackTrace();
-	       } catch (IOException e) {
-	          e.printStackTrace();
-	       } catch (ParseException e) {
-	          e.printStackTrace();
-	       }
-		
-	    System.out.print(isUser);
+		boolean isUser = false;
+
+		// initialise the Json parser object;
+		JSONParser jsonP = new JSONParser();
+
+		try {
+			// reads the file
+			FileReader fr = new FileReader(".\\credentialDatabase.txt");
+
+			// Parses the json data inside the the filereader
+			JSONObject jsonO = (JSONObject) jsonP.parse(fr);
+
+			// initialise the jsonArray object by casting jsonO as a JSONArray
+			JSONArray jsonA = (JSONArray) jsonO.get("users");
+
+			// Loop through all users and check their password;
+			for (Object user : jsonA) {
+
+				JSONObject tempUser = (JSONObject) user;
+
+				String tempUsername = (String) tempUser.get("username");
+				String tempPassword = (String) tempUser.get("password");
+
+				if (tempUsername.equals(username) && tempPassword.equals(password)) {
+					isUser = true;
+				}
+				;
+			}
+
+			// exceptions
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
 		return isUser;
-		
+
 	}
 }

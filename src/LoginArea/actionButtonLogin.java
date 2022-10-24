@@ -5,25 +5,25 @@ import java.awt.event.ActionListener;
 
 import mainUI.MainUI;
 
-public class actionButtonLogin implements ActionListener{
+public class actionButtonLogin implements ActionListener {
 
-	public actionButtonLogin() {
-
-	}
-
-
+	// Action performed when the button is clicked.
+	// It either update the Login UI or closes the login UI and lunch the main UI
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		credentialChecker checker = new credentialChecker(LoginPage.getUsername().getText(), LoginPage.getPassword().getText());
+
+		// Calls the credentials checker function
+		credentialChecker checker = new credentialChecker(LoginPage.getUsername().getText(),
+				LoginPage.getPassword().getText());
 		boolean access = checker.isUser();
-		if(access) {
-			UILuncher.nLoginPage.dispose();
+
+		// makes a decision depending on if the user and password are in the data base
+		if (access) {
+			UILauncher.getnLoginPage().dispose();
 			new MainUI();
 			MainUI.main(null);
-			
-		}
-		else {
-			displayMessageLoginUI.updateLoginUI();
+		} else {
+			new displayMessageLoginUI();
 		}
 	}
 
