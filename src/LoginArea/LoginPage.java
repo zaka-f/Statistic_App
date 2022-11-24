@@ -2,8 +2,21 @@ package LoginArea;
 
 import javax.swing.*;
 
+import mainUI.MainUI;
+
+//Singelton Design patetrn used here
+
 public class LoginPage extends JFrame {
 
+	private static LoginPage instance;
+	
+	public static LoginPage getInstance() {
+		if (instance == null)
+			instance = new LoginPage();
+
+		return instance;
+	}
+	
 	// Initialize buttons
 	private static JTextField username;
 	private static JButton button;
