@@ -4,7 +4,7 @@ import javax.swing.*;
 
 import mainUI.MainUI;
 
-//Singelton Design patetrn used here
+//Singelton Design patern used here
 
 public class LoginPage extends JFrame {
 
