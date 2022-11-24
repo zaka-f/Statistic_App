@@ -76,6 +76,7 @@ public class MainUI extends JFrame {
 		countriesNames.add("Brazil");
 		countriesNames.sort(null);
 		JComboBox<String> countriesList = new JComboBox<String>(countriesNames);
+		countriesList.addActionListener(new DropDownMenuCountries());
 
 		JLabel from = new JLabel("From");
 		JLabel to = new JLabel("To");
@@ -112,12 +113,12 @@ public class MainUI extends JFrame {
 		JLabel methodLabel = new JLabel("        Choose analysis method: ");
 
 		Vector<String> methodsNames = new Vector<String>();
-		methodsNames.add("Mortality");
-		methodsNames.add("Mortality vs Expenses");
-		methodsNames.add("Mortality vs Expenses & Hospital Beds");
-		methodsNames.add("Mortality vs GDP");
-		methodsNames.add("Unemployment vs GDP");
-		methodsNames.add("Unemployment");
+		methodsNames.add("Total Population");
+		methodsNames.add("Total Population vs Forest Area");
+		methodsNames.add("Total Population vs Access To Electricity from Clean Energy & Electricity Production from Coal Sources");
+		methodsNames.add("Energy Use vs GDP");
+		methodsNames.add("Forest Area vs GDP");
+		methodsNames.add("Forest Area");
 
 		JComboBox<String> methodsList = new JComboBox<String>(methodsNames);
 
