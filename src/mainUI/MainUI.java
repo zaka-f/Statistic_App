@@ -7,45 +7,18 @@
 
 package mainUI;
 
-import java.awt.BasicStroke;
+
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.Vector;
 
-import javax.swing.BorderFactory;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.axis.CategoryAxis;
-import org.jfree.chart.axis.DateAxis;
-import org.jfree.chart.axis.NumberAxis;
-import org.jfree.chart.block.BlockBorder;
-import org.jfree.chart.plot.CategoryPlot;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.chart.plot.XYPlot;
-import org.jfree.chart.renderer.category.BarRenderer;
-import org.jfree.chart.renderer.xy.XYItemRenderer;
-import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
-import org.jfree.chart.renderer.xy.XYSplineRenderer;
-import org.jfree.chart.title.TextTitle;
-import org.jfree.chart.util.TableOrder;
-import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.data.time.TimeSeries;
-import org.jfree.data.time.TimeSeriesCollection;
-import org.jfree.data.time.Year;
-import org.jfree.data.xy.XYSeries;
-import org.jfree.data.xy.XYSeriesCollection;
 
 public class MainUI extends JFrame {
 	/**
@@ -55,9 +28,9 @@ public class MainUI extends JFrame {
 
 	private static MainUI instance;
 	
-	private JComboBox<String> countriesList;
+	private static JComboBox<String> countriesList;
 
-	public JComboBox<String> getCountriesList() {
+	public static JComboBox<String> getCountriesList() {
 		return countriesList;
 	}
 
@@ -152,19 +125,24 @@ public class MainUI extends JFrame {
 		getContentPane().add(east, BorderLayout.EAST);
 		getContentPane().add(south, BorderLayout.SOUTH);
 		getContentPane().add(west, BorderLayout.WEST);
+		
+
+		setSize(900, 600);
+		pack();
+		setVisible(true);
 	}
 
 	
 
 	
 
-	public static void main(String[] args) {
-
-		JFrame frame = MainUI.getInstance();
-		frame.setSize(900, 600);
-		frame.pack();
-		frame.setVisible(true);
-	}
+//	public static void main(String[] args) {
+//
+//		JFrame frame = MainUI.getInstance();
+//		frame.setSize(900, 600);
+//		frame.pack();
+//		frame.setVisible(true);
+//	}
 	// TODO Auto-generated method stub
 
 }

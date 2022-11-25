@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import mainUI.MainUI;
+import mainUI.MainUI_Luncher;
 
 public class actionButtonLogin implements ActionListener {
 
@@ -21,7 +22,7 @@ public class actionButtonLogin implements ActionListener {
 		if (access) {
 			UILauncher.getnLoginPage().dispose();
 			new MainUI();
-			MainUI.main(null);
+			MainUI_Luncher.main(null);
 		} else {
 			new displayMessageLoginUI();
 		}

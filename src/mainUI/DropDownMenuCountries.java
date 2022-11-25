@@ -12,8 +12,9 @@ public class DropDownMenuCountries implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		System.out.println("action performed");
-		CountryFetchableChecker checker = new CountryFetchableChecker(MainUI.getCountriesList().getText());
+		CountryFetchableChecker checker = new CountryFetchableChecker(MainUI.getCountriesList().getSelectedItem().toString());
 		boolean access = checker.isUser();
+		System.out.print(access);
 		
 	}
 
