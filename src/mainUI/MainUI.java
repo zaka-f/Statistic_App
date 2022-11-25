@@ -54,6 +54,16 @@ public class MainUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	private static MainUI instance;
+	
+	private JComboBox<String> countriesList;
+
+	public JComboBox<String> getCountriesList() {
+		return countriesList;
+	}
+
+	public void setCountriesList(JComboBox<String> countriesList) {
+		this.countriesList = countriesList;
+	}
 
 	public static MainUI getInstance() {
 		if (instance == null)

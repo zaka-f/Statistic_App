@@ -12,43 +12,42 @@ import org.json.simple.parser.ParseException;
 public class CountryFetchableChecker {
 
 		// instance variables
-		private String username;
-		private String password;
+		private String country;
 
 		// constructor
-		protected credentialChecker(String country) {
-			this.username = username;
-			this.password = password;
+		protected CountryFetchableChecker(String country) {
+			this.country = country;
 		}
 
-		// function that checks wether the user exists or not in the file
+		// function that checks whether the user exists or not in the file
 		boolean isUser() {
 
-			boolean isUser = false;
+			boolean isfetchable = false;
 
 			// initialise the Json parser object;
 			JSONParser jsonP = new JSONParser();
 
 			try {
 				// reads the file
-				FileReader fr = new FileReader(".\\credentialDatabase.txt");
+				FileReader fr = new FileReader(".\\countriesFetchability.txt");
 
 				// Parses the json data inside the the filereader
 				JSONObject jsonO = (JSONObject) jsonP.parse(fr);
 
 				// initialise the jsonArray object by casting jsonO as a JSONArray
-				JSONArray jsonA = (JSONArray) jsonO.get("users");
+				JSONArray jsonA = (JSONArray) jsonO.get("countries");
 
 				// Loop through all users and check their password;
-				for (Object user : jsonA) {
+				for (Object country : jsonA) {
 
-					JSONObject tempUser = (JSONObject) user;
+					JSONObject tempUser = (JSONObject) country;
 
-					String tempUsername = (String) tempUser.get("username");
-					String tempPassword = (String) tempUser.get("password");
+					String tempCountry = (String) tempUser.get("country");
+					String tempFetchable = (String) tempUser.get("fetchable");
 
-					if (tempUsername.equals(username) && tempPassword.equals(password)) {
-						isUser = true;
+					if (tempCountry.equals(country)) {
+						if (tempFetchable.equals("true"))
+						isfetchable = true;
 					}
 					;
 				}
@@ -62,9 +61,9 @@ public class CountryFetchableChecker {
 				e.printStackTrace();
 			}
 
-			return isUser;
+			return isfetchable;
 
 		}
-	}
-
 }
+
+
