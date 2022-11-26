@@ -1,0 +1,24 @@
+{
+    "countries": [
+      {
+        "country": "Brazil",
+        "fetchable": "true"
+      },
+      {
+        "country": "Canada",
+        "fetchable": "true"
+      },
+      {
+        "country": "China",
+        "fetchable": "false"
+      }
+      {
+        "country": "France",
+        "fetchable": "true"
+      }
+      {
+        "country": "USA",
+        "fetchable": "false"
+      }
+    ]
+  }

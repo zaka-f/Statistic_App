@@ -1,14 +1,14 @@
 package Dropdown_Menu_Years;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import mainUI.Error_Message;
+import mainUI.MainUI;
 
-public class Years_Decider implements ActionListener{
+public class Years_Decider{
 
-	private boolean year_To_Clicked;
-	private boolean year_From_Clicked;
+	private static boolean year_To_Clicked;
+	private static boolean year_From_Clicked;
 	
-	static Years_Decider instance;
+	private static Years_Decider instance;
 	
 	//Singeleton Design pattern is being used here
 	public static Years_Decider getInstance() {
@@ -33,9 +33,20 @@ public class Years_Decider implements ActionListener{
 	}
 
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-	
+	public static boolean isYearOrderCorrect(){
+		boolean order = false;
+		Integer start = Integer.valueOf(String.valueOf(MainUI.getFromList().getSelectedItem()));
+		Integer end = Integer.valueOf(String.valueOf(MainUI.getToList().getSelectedItem()));
+		if (year_From_Clicked && year_To_Clicked && (end - start) <= 0) {
+			    System.out.print("it s working");
+			    new Error_Message("year order wrong");
+			}
+		else if (year_From_Clicked && year_To_Clicked && (end - start) >= 0) {
+			    order = true;
+		}
+		return order;
 	}
+	
+	
 
 }

@@ -1,6 +1,5 @@
 package mainUI;
 
-import LoginArea.LoginPage;
 
 //Facade Design pattern is being used here
 public class MainUI_Luncher {

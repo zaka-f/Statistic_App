@@ -8,6 +8,7 @@ public class Year_To_Action implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Years_Decider.getInstance().setYear_To_Clicked(true);
+		Years_Decider.isYearOrderCorrect();
 	}
 
 }

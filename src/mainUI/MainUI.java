@@ -19,21 +19,39 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Dropdown_Menu_Years.Year_From_Action;
+import Dropdown_Menu_Years.Year_To_Action;
 import dropdown_Menu_Analyses.Dropdown_Menu_Analyses_Action;
 import dropdown_Menu_Countries.DropDownMenuCountriesAction;
 
 
 public class MainUI extends JFrame {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	private static MainUI instance;
 	
 	private static JComboBox<String> countriesList;
 	
 	private static JComboBox<String> methodsList;
+	
+	private static JComboBox<String> fromList;
+	
+	private static JComboBox<String> toList;
+
+	public static JComboBox<String> getFromList() {
+		return fromList;
+	}
+
+	public static void setFromList(JComboBox<String> fromList) {
+		MainUI.fromList = fromList;
+	}
+
+	public static JComboBox<String> getToList() {
+		return toList;
+	}
+
+	public static void setToList(JComboBox<String> toList) {
+		MainUI.toList = toList;
+	}
 
 	public static JComboBox<String> getCountriesList() {
 		return countriesList;
@@ -73,8 +91,12 @@ public class MainUI extends JFrame {
 		for (int i = 2021; i >= 2010; i--) {
 			years.add("" + i);
 		}
-		JComboBox<String> fromList = new JComboBox<String>(years);
-		JComboBox<String> toList = new JComboBox<String>(years);
+		fromList = new JComboBox<String>(years);
+		toList = new JComboBox<String>(years);
+		
+		fromList.addActionListener(new Year_From_Action());
+		
+		toList.addActionListener(new Year_To_Action());
 
 		JPanel north = new JPanel();
 		north.add(chooseCountryLabel);

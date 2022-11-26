@@ -2,7 +2,6 @@ package LoginArea;
 
 import javax.swing.*;
 
-import mainUI.MainUI;
 
 //Singelton Design patern used here
 

@@ -9,62 +9,68 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class CountryFetchableChecker {
+public class CountryFetchableChecker implements CountryFetchableDataRetreiver {
 
-		// instance variables
-		private String country;
+	// instance variables
+	private String country;
+	JSONArray data;
 
-		// constructor
-		protected CountryFetchableChecker(String country) {
-			this.country = country;
+	// constructor
+	protected CountryFetchableChecker(String country) {
+		this.country = country;
+		ExtractData();
+	}
+
+	public void ExtractData() {
+		// initialise the Json parser object;
+		JSONParser jsonP = new JSONParser();
+
+		try {
+			// reads the file
+			FileReader fr = new FileReader(".\\countriesFetchability.txt");
+
+			// Parses the json data inside the the filereader
+			JSONObject jsonO = (JSONObject) jsonP.parse(fr);
+
+			// initialise the datarray object by casting jsonO as a JSONArray
+			data = (JSONArray) jsonO.get("countries");
+			// exceptions
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
 		}
+	}
 
-		// function that checks whether the user exists or not in the file
-		boolean isUser() {
+	// function that checks whether the user exists or not in the file
+	public String getFetchable() {
 
-			boolean isfetchable = false;
+		String isfetchable = "";
 
-			// initialise the Json parser object;
-			JSONParser jsonP = new JSONParser();
+		// Loop through all users and check their password;
+		for (Object country : data) {
 
-			try {
-				// reads the file
-				FileReader fr = new FileReader(".\\countriesFetchability.txt");
+			JSONObject tempUser = (JSONObject) country;
 
-				// Parses the json data inside the the filereader
-				JSONObject jsonO = (JSONObject) jsonP.parse(fr);
+			String tempCountry = (String) tempUser.get("country");
 
-				// initialise the jsonArray object by casting jsonO as a JSONArray
-				JSONArray jsonA = (JSONArray) jsonO.get("countries");
-
-				// Loop through all users and check their password;
-				for (Object country : jsonA) {
-
-					JSONObject tempUser = (JSONObject) country;
-
-					String tempCountry = (String) tempUser.get("country");
-
-					String tempFetchable = (String) tempUser.get("fetchable");
-
-					if (tempCountry.equals(this.country)) {
-						if (tempFetchable.equals("true"))
-						isfetchable = true;
-					}
-					;
-				}
-
-				// exceptions
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			} catch (ParseException e) {
-				e.printStackTrace();
+			if (tempCountry.equals(this.country)) {
+				return String.valueOf(tempUser.get("fetchable"));
 			}
-
-			return isfetchable;
+			;
 
 		}
+
+		return isfetchable;
+	}
+
+	boolean isFetchable() {
+		if (getFetchable().equals("true"))
+			return true;
+		else
+			return false;
+
+	}
 }
-
-
