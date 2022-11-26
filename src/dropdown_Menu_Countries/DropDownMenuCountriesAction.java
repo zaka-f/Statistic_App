@@ -1,4 +1,4 @@
-package dropdown_Menu;
+package dropdown_Menu_Countries;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,12 +10,11 @@ import LoginArea.displayMessageLoginUI;
 import mainUI.MainUI;
 import mainUI.MainUI_Luncher;
 
-public class DropDownMenuCountries implements ActionListener {
+public class DropDownMenuCountriesAction implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("action performed");
 		CountryFetchableChecker checker = new CountryFetchableChecker(String.valueOf(MainUI.getCountriesList().getSelectedItem()));
 		boolean fetchable = checker.isUser();
 		System.out.print(fetchable);

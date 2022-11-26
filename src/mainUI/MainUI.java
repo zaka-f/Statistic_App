@@ -19,7 +19,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import dropdown_Menu.DropDownMenuCountries;
+import dropdown_Menu_Analyses.Dropdown_Menu_Analyses_Action;
+import dropdown_Menu_Countries.DropDownMenuCountriesAction;
 
 
 public class MainUI extends JFrame {
@@ -31,6 +32,8 @@ public class MainUI extends JFrame {
 	private static MainUI instance;
 	
 	private static JComboBox<String> countriesList;
+	
+	private static JComboBox<String> methodsList;
 
 	public static JComboBox<String> getCountriesList() {
 		return countriesList;
@@ -62,7 +65,7 @@ public class MainUI extends JFrame {
 		countriesNames.add("Brazil");
 		countriesNames.sort(null);
 		countriesList = new JComboBox<String>(countriesNames);
-		countriesList.addActionListener(new DropDownMenuCountries());
+		countriesList.addActionListener(new DropDownMenuCountriesAction());
 
 		JLabel from = new JLabel("From");
 		JLabel to = new JLabel("To");
@@ -106,7 +109,8 @@ public class MainUI extends JFrame {
 		methodsNames.add("Forest Area vs GDP");
 		methodsNames.add("Forest Area");
 
-		JComboBox<String> methodsList = new JComboBox<String>(methodsNames);
+		methodsList = new JComboBox<String>(methodsNames);
+		methodsList.addActionListener(new Dropdown_Menu_Analyses_Action());
 
 		JPanel south = new JPanel();
 		south.add(viewsLabel);
@@ -135,17 +139,5 @@ public class MainUI extends JFrame {
 		setVisible(true);
 	}
 
-	
-
-	
-
-//	public static void main(String[] args) {
-//
-//		JFrame frame = MainUI.getInstance();
-//		frame.setSize(900, 600);
-//		frame.pack();
-//		frame.setVisible(true);
-//	}
-	// TODO Auto-generated method stub
 
 }

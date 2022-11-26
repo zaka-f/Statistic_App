@@ -1,4 +1,4 @@
-package dropdown_Menu;
+package dropdown_Menu_Countries;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -41,13 +41,10 @@ public class CountryFetchableChecker {
 				for (Object country : jsonA) {
 
 					JSONObject tempUser = (JSONObject) country;
-					
-//					System.out.print(tempCountry+"\n");
 
 					String tempCountry = (String) tempUser.get("country");
-					System.out.print(tempCountry+"\n");
+
 					String tempFetchable = (String) tempUser.get("fetchable");
-					System.out.print(tempFetchable+"\n");
 
 					if (tempCountry.equals(this.country)) {
 						if (tempFetchable.equals("true"))
