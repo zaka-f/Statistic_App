@@ -1,23 +1,25 @@
-package dropdown_Menu_Countries;
+package Dropdown_Menu_Years;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class CountryFetchableChecker implements CountryFetchableDataRetreiver {
+public class Years_Analyses_Data_Processor implements Years_Analyses_Data_Extractor{
 
 	// instance variables
-	private String country;
+	private String analyses;
 	JSONArray data;
 
 	// constructor
-	protected CountryFetchableChecker(String country) {
-		this.country = country;
+	protected Years_Analyses_Data_Processor(String analyses) {
+		this.analyses = analyses;
 		ExtractData();
 	}
 
@@ -27,13 +29,13 @@ public class CountryFetchableChecker implements CountryFetchableDataRetreiver {
 
 		try {
 			// reads the file
-			FileReader fr = new FileReader(".\\countriesFetchability.txt");
+			FileReader fr = new FileReader(".\\Years_Analyses_Compatibility.txt");
 
 			// Parses the json data inside the the filereader
 			JSONObject jsonO = (JSONObject) jsonP.parse(fr);
 
 			// initialise the datarray object by casting jsonO as a JSONArray
-			data = (JSONArray) jsonO.get("countries");
+			data = (JSONArray) jsonO.get("analysesXyears");
 			// exceptions
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -45,18 +47,18 @@ public class CountryFetchableChecker implements CountryFetchableDataRetreiver {
 	}
 
 	// function that checks whether the user exists or not in the file
-	public String getFetchable() {
+	public List<Integer> getFetchable() {
 
-		String isfetchable = "";
+		List<Integer> isfetchable = new ArrayList<Integer>();
 
 		// Loop through all users and check their password;
-		for (Object country : data) {
+		for (Object analyses : data) {
 
-			JSONObject tempUser = (JSONObject) country;
+			JSONObject tempAnalyses = (JSONObject) analyses;
 
-			String tempCountry = (String) tempUser.get("country");
+			String tempYear = (String) tempAnalyses.get("year");
 
-			if (tempCountry.equals(this.country)) {
+			if (tempYear.equals(this.analyses)) {
 				return String.valueOf(tempUser.get("fetchable"));
 			}
 			;
@@ -65,5 +67,5 @@ public class CountryFetchableChecker implements CountryFetchableDataRetreiver {
 
 		return isfetchable;
 	}
-
+	
 }

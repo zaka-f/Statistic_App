@@ -1,24 +1,29 @@
 {
-    "countries": [
+    "analysesXyears": [
       {
-        "country": "Brazil",
-        "fetchable": "true"
+        "analyses": "Total Population",
+        "year": "2010"
       },
       {
-        "country": "Canada",
-        "fetchable": "true"
+        "analyses": "Total Population vs Forest Area",
+        "year": "2011"
       },
       {
-        "country": "China",
-        "fetchable": "false"
+        "analyses": "Total Population vs Access To Electricity from Clean Energy & Electricity Production from Coal Sources",
+        "year": "2012"
       }
       {
-        "country": "France",
-        "fetchable": "true"
+        "analyses": "Energy Use vs GDP",
+        "year": "2013"
       }
       {
-        "country": "USA",
-        "fetchable": "false"
+        "analyses": "Forest Area vs GDP",
+        "year": "2014"
+      }
+      {
+        "analyses": "Forest Area",
+        "year": "2015"
       }
     ]
   }
+  
