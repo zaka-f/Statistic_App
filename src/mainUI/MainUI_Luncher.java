@@ -2,10 +2,11 @@ package mainUI;
 
 import LoginArea.LoginPage;
 
+//Facade Design pattern is being used here
 public class MainUI_Luncher {
 	private static MainUI nMainUI;
 
-	public static MainUI getnLoginPage() {
+	public static MainUI getnMainUI() {
 		return nMainUI;
 	}
 

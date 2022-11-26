@@ -41,11 +41,15 @@ public class CountryFetchableChecker {
 				for (Object country : jsonA) {
 
 					JSONObject tempUser = (JSONObject) country;
+					
+//					System.out.print(tempCountry+"\n");
 
 					String tempCountry = (String) tempUser.get("country");
+					System.out.print(tempCountry+"\n");
 					String tempFetchable = (String) tempUser.get("fetchable");
+					System.out.print(tempFetchable+"\n");
 
-					if (tempCountry.equals(country)) {
+					if (tempCountry.equals(this.country)) {
 						if (tempFetchable.equals("true"))
 						isfetchable = true;
 					}

@@ -38,6 +38,7 @@ public class MainUI extends JFrame {
 		this.countriesList = countriesList;
 	}
 
+	//Singeleton Design pattern is being used here
 	public static MainUI getInstance() {
 		if (instance == null)
 			instance = new MainUI();
@@ -58,7 +59,7 @@ public class MainUI extends JFrame {
 		countriesNames.add("China");
 		countriesNames.add("Brazil");
 		countriesNames.sort(null);
-		JComboBox<String> countriesList = new JComboBox<String>(countriesNames);
+		countriesList = new JComboBox<String>(countriesNames);
 		countriesList.addActionListener(new DropDownMenuCountries());
 
 		JLabel from = new JLabel("From");

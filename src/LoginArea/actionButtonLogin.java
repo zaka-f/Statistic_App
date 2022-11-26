@@ -21,7 +21,7 @@ public class actionButtonLogin implements ActionListener {
 		// makes a decision depending on if the user and password are in the data base
 		if (access) {
 			UILauncher.getnLoginPage().dispose();
-			new MainUI();
+			new MainUI_Luncher();
 			MainUI_Luncher.main(null);
 		} else {
 			new displayMessageLoginUI();

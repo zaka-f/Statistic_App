@@ -1,7 +1,6 @@
 package LoginArea;
 
 //Facade design pattern
-
 public class UILauncher {
 
 	private static LoginPage nLoginPage;
