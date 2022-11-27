@@ -7,11 +7,9 @@
 
 package mainUI;
 
-
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.util.Vector;
-
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -23,19 +21,39 @@ import Dropdown_Menu_Years.Year_From_Action;
 import Dropdown_Menu_Years.Year_To_Action;
 import dropdown_Menu_Analyses.Dropdown_Menu_Analyses_Action;
 import dropdown_Menu_Countries.DropDownMenuCountriesAction;
-
+import viewers.On_Click_Viewers;
 
 public class MainUI extends JFrame {
 
 	private static MainUI instance;
-	
+
 	private static JComboBox<String> countriesList;
-	
+
 	private static JComboBox<String> methodsList;
-	
+
 	private static JComboBox<String> fromList;
-	
+
 	private static JComboBox<String> toList;
+
+	private static JComboBox<String> viewsList;
+	
+	private static JPanel west ;
+
+	public static JPanel getWest() {
+		return west;
+	}
+
+	public static void setWest(JPanel west) {
+		MainUI.west = west;
+	}
+
+	public static JComboBox<String> getViewsList() {
+		return viewsList;
+	}
+
+	public static void setViewsList(JComboBox<String> viewsList) {
+		MainUI.viewsList = viewsList;
+	}
 
 	public static JComboBox<String> getMethodsList() {
 		return methodsList;
@@ -69,7 +87,7 @@ public class MainUI extends JFrame {
 		this.countriesList = countriesList;
 	}
 
-	//Singeleton Design pattern is being used here
+	// Singeleton Design pattern is being used here
 	public static MainUI getInstance() {
 		if (instance == null)
 			instance = new MainUI();
@@ -101,9 +119,9 @@ public class MainUI extends JFrame {
 		}
 		fromList = new JComboBox<String>(years);
 		toList = new JComboBox<String>(years);
-		
+
 		fromList.addActionListener(new Year_From_Action());
-		
+
 		toList.addActionListener(new Year_To_Action());
 
 		JPanel north = new JPanel();
@@ -125,8 +143,9 @@ public class MainUI extends JFrame {
 		viewsNames.add("Bar Chart");
 		viewsNames.add("Scatter Chart");
 		viewsNames.add("Report");
-		JComboBox<String> viewsList = new JComboBox<String>(viewsNames);
+		viewsList = new JComboBox<String>(viewsNames);
 		JButton addView = new JButton("+");
+		addView.addActionListener(new On_Click_Viewers());
 		JButton removeView = new JButton("-");
 
 		JLabel methodLabel = new JLabel("        Choose analysis method: ");
@@ -134,7 +153,8 @@ public class MainUI extends JFrame {
 		Vector<String> methodsNames = new Vector<String>();
 		methodsNames.add("Total Population");
 		methodsNames.add("Total Population vs Forest Area");
-		methodsNames.add("Total Population vs Access To Electricity from Clean Energy & Electricity Production from Coal Sources");
+		methodsNames.add(
+				"Total Population vs Access To Electricity from Clean Energy & Electricity Production from Coal Sources");
 		methodsNames.add("Energy Use vs GDP");
 		methodsNames.add("Forest Area vs GDP");
 		methodsNames.add("Forest Area");
@@ -162,12 +182,10 @@ public class MainUI extends JFrame {
 		getContentPane().add(east, BorderLayout.EAST);
 		getContentPane().add(south, BorderLayout.SOUTH);
 		getContentPane().add(west, BorderLayout.WEST);
-		
 
 		setSize(900, 600);
 		pack();
 		setVisible(true);
 	}
-
 
 }

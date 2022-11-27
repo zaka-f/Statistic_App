@@ -13,8 +13,8 @@ public class actionButtonLogin implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		// Calls the credentials checker function
-		credentialChecker checker = new credentialChecker(LoginPage.getUsername().getText(),
+		// Calls the credentials checker proxy function
+		credentialCheckerProxy checker = new credentialCheckerProxy(LoginPage.getUsername().getText(),
 				LoginPage.getPassword().getText());
 		boolean access = checker.isUser();
 
