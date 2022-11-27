@@ -34,7 +34,7 @@ public class Years_Decider{
 	}
 
     
-	public static boolean isYearOrderCorrect(){
+	public boolean isYearOrderCorrect(){
 		boolean correct = false;
 		Integer start = Integer.valueOf(String.valueOf(MainUI.getFromList().getSelectedItem()));
 		Integer end = Integer.valueOf(String.valueOf(MainUI.getToList().getSelectedItem()));
@@ -48,7 +48,7 @@ public class Years_Decider{
 	}
 	
 	
-	public static boolean isYearAvailable(){
+	public boolean isYearAvailable(){
 		boolean correct = true;
 		new Proxy_Years_Analyses_Data_Processor(String.valueOf(MainUI.getMethodsList().getSelectedItem()));
 		if (!isYearAvailable())	{

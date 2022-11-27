@@ -5,6 +5,7 @@ import org.json.simple.JSONArray;
 //Here Proxy Design Pattern was used
 
 public class ProxyCountryFetchableChecker implements CountryFetchableDataRetreiver {
+	
 	// instance variables
 	private String country;
 	private CountryFetchableChecker checker;
@@ -21,11 +22,12 @@ public class ProxyCountryFetchableChecker implements CountryFetchableDataRetreiv
 		checker.ExtractData();
 	}
 
-	// function that checks whether the user exists or not in the file
+	// function that checks rthe country is fetchable
 	public String getFetchable() {
 		return checker.getFetchable();
 	}
 
+	//returns a boolean depending on if the country is fetchable
 	boolean isFetchable() {
 		if (getFetchable().equals("true"))
 			return true;
