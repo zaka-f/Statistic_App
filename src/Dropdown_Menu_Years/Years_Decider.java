@@ -1,5 +1,6 @@
 package Dropdown_Menu_Years;
 
+import dropdown_Menu_Analyses.Analyses;
 import mainUI.Error_Message;
 import mainUI.MainUI;
 
@@ -32,19 +33,31 @@ public class Years_Decider{
 		this.year_From_Clicked = year_From_Clicked;
 	}
 
-
+    
 	public static boolean isYearOrderCorrect(){
-		boolean order = false;
+		boolean correct = false;
 		Integer start = Integer.valueOf(String.valueOf(MainUI.getFromList().getSelectedItem()));
 		Integer end = Integer.valueOf(String.valueOf(MainUI.getToList().getSelectedItem()));
 		if (year_From_Clicked && year_To_Clicked && (end - start) <= 0) {
-			    System.out.print("it s working");
 			    new Error_Message("year order wrong");
 			}
 		else if (year_From_Clicked && year_To_Clicked && (end - start) >= 0) {
-			    order = true;
+			    correct = true;
 		}
-		return order;
+		return correct;
+	}
+	
+	
+	public static boolean isYearAvailable(){
+		boolean correct = true;
+		new Proxy_Years_Analyses_Data_Processor(String.valueOf(MainUI.getMethodsList().getSelectedItem()));
+		if (!isYearAvailable())	{
+			correct = false;
+			System.out.println("Year for analyses is not available\n");
+			new Error_Message("the years selected are not valid for the selected type of analysis");
+		}	
+		else {System.out.println("Year for analyses is available\n");}
+		return correct;
 	}
 	
 	

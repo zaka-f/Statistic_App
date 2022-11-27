@@ -37,6 +37,14 @@ public class MainUI extends JFrame {
 	
 	private static JComboBox<String> toList;
 
+	public static JComboBox<String> getMethodsList() {
+		return methodsList;
+	}
+
+	public static void setMethodsList(JComboBox<String> methodsList) {
+		MainUI.methodsList = methodsList;
+	}
+
 	public static JComboBox<String> getFromList() {
 		return fromList;
 	}

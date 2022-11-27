@@ -16,10 +16,12 @@ public class Years_Analyses_Data_Processor implements Years_Analyses_Data_Extrac
 	// instance variables
 	private String analyses;
 	JSONArray data;
+	private List<Integer> isfetchable;
 
 	// constructor
 	protected Years_Analyses_Data_Processor(String analyses) {
 		this.analyses = analyses;
+		isfetchable = new ArrayList<Integer>();
 		ExtractData();
 	}
 
@@ -49,8 +51,6 @@ public class Years_Analyses_Data_Processor implements Years_Analyses_Data_Extrac
 	// function that checks whether the user exists or not in the file
 	public List<Integer> getFetchable() {
 
-		List<Integer> isfetchable = new ArrayList<Integer>();
-
 		// Loop through all users and check their password;
 		for (Object analyses : data) {
 
@@ -59,7 +59,7 @@ public class Years_Analyses_Data_Processor implements Years_Analyses_Data_Extrac
 			String tempYear = (String) tempAnalyses.get("year");
 
 			if (tempYear.equals(this.analyses)) {
-				return String.valueOf(tempUser.get("fetchable"));
+				isfetchable.add(Integer.valueOf(tempYear));
 			}
 			;
 
