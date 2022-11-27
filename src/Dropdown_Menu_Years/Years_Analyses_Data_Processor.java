@@ -11,11 +11,11 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class Years_Analyses_Data_Processor implements Years_Analyses_Data_Extractor{
+public class Years_Analyses_Data_Processor implements Years_Analyses_Data_Extractor {
 
 	// instance variables
 	private String analyses;
-	JSONArray data;
+	private JSONArray data;
 	private List<Integer> isfetchable;
 
 	// constructor
@@ -56,16 +56,15 @@ public class Years_Analyses_Data_Processor implements Years_Analyses_Data_Extrac
 
 			JSONObject tempAnalyses = (JSONObject) analyses;
 
-			String tempYear = (String) tempAnalyses.get("year");
+			String tempAnalyse = String.valueOf(tempAnalyses.get("analyses"));
+			int tempYear = Integer.parseInt(String.valueOf(tempAnalyses.get("year")));
 
-			if (tempYear.equals(this.analyses)) {
-				isfetchable.add(Integer.valueOf(tempYear));
-			}
-			;
+			isfetchable.add(tempYear);
 
 		}
 
+		System.out.println(isfetchable + "\n");
 		return isfetchable;
 	}
-	
+
 }

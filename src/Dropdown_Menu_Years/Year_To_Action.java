@@ -10,7 +10,7 @@ public class Year_To_Action implements ActionListener{
 
 		Years_Decider.getInstance().setYear_To_Clicked(true);
 		Years_Decider.getInstance().isYearOrderCorrect();
-//		Years_Decider.getInstance().isYearAvailable();
+		Years_Decider.getInstance().isYearAvailable();
 	}
 
 }

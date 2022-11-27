@@ -21,7 +21,7 @@
         "year": "2014"
       }
       {
-        "analyses": "Forest Area",
+        "analyses": "ForestÂ Area",
         "year": "2015"
       }
     ]
