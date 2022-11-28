@@ -27,6 +27,7 @@ public class credentialCheckerProxy implements credentialCheckerDataRetriever {
 
 	public boolean isUser() {
 
+		getCombo();
 		if (comboArrayList.size() == 0) {
 			return false;
 		} else if (!(comboArrayList.get(1)).equals(password)) {

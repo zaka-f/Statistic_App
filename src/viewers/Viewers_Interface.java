@@ -1,5 +1,6 @@
 package viewers;
 
-public interface Viewers_Interface {
+public class Viewers_Interface {
+
 
 }

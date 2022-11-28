@@ -12,6 +12,7 @@ public class MainUI_Luncher {
 	public static void main(String[] args) {
 		// Initialization of the login page
 		nMainUI = MainUI.getInstance();
+		
 	}
 	
 

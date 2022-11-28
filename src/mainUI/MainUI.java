@@ -8,6 +8,7 @@
 package mainUI;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.Vector;
 
@@ -175,7 +176,7 @@ public class MainUI extends JFrame {
 		JPanel east = new JPanel();
 
 		// Set charts region
-		JPanel west = new JPanel();
+		west = new JPanel();
 		west.setLayout(new GridLayout(2, 0));
 
 		getContentPane().add(north, BorderLayout.NORTH);
@@ -183,7 +184,16 @@ public class MainUI extends JFrame {
 		getContentPane().add(south, BorderLayout.SOUTH);
 		getContentPane().add(west, BorderLayout.WEST);
 
-		setSize(900, 600);
+//		setSize(300, 200);
+//		setLocation(200,200);
+//		pack();
+//		setVisible(true);
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setPreferredSize(new Dimension(900,600));
+		setLocation(200,200);
+//		setMaximumSize(new Dimension(900,600));
+//		setMinimumSize(new Dimension(900,600));
 		pack();
 		setVisible(true);
 	}
