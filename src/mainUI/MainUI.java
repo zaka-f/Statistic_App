@@ -22,7 +22,8 @@ import Dropdown_Menu_Years.Year_From_Action;
 import Dropdown_Menu_Years.Year_To_Action;
 import dropdown_Menu_Analyses.Dropdown_Menu_Analyses_Action;
 import dropdown_Menu_Countries.DropDownMenuCountriesAction;
-import viewers.OnClickViewersAction;
+import viewers.OnClickViewersActioRemove;
+import viewers.OnClickViewersActionAdd;
 
 public class MainUI extends JFrame {
 
@@ -146,8 +147,9 @@ public class MainUI extends JFrame {
 		viewsNames.add("Report");
 		viewsList = new JComboBox<String>(viewsNames);
 		JButton addView = new JButton("+");
-		addView.addActionListener(new OnClickViewersAction());
+		addView.addActionListener(new OnClickViewersActionAdd());
 		JButton removeView = new JButton("-");
+		removeView.addActionListener(new OnClickViewersActioRemove());
 
 		JLabel methodLabel = new JLabel("        Choose analysis method: ");
 

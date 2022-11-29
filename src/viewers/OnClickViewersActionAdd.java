@@ -7,7 +7,7 @@ import org.jfree.chart.ChartPanel;
 
 import mainUI.MainUI;
 
-public class OnClickViewersAction implements ActionListener {
+public class OnClickViewersActionAdd implements ActionListener {
 
 	Views views;
 
