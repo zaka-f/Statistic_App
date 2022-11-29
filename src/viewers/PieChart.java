@@ -4,29 +4,26 @@ import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.BorderFactory;
+import javax.swing.JComponent;
 
 import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartFrame;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.general.DefaultPieDataset;
 
-import mainUI.MainUI;
-
-public class Viewer_Pie_Chart extends Viewers_Interface {
+public class PieChart <T extends JComponent> extends ViewerInterface {
 
 	private DefaultPieDataset dataset;
 
 	private JFreeChart pieChart;
-	
-	private ChartPanel chartPanel;
 
-	public ChartPanel getChartPanel() {
+	private T chartPanel;
+
+	public T getChartPanel() {
 		return chartPanel;
 	}
 
-	public void setChartPanel(ChartPanel chartPanel) {
+	public void setChartPanel(T chartPanel) {
 		this.chartPanel = chartPanel;
 	}
 
@@ -46,31 +43,23 @@ public class Viewer_Pie_Chart extends Viewers_Interface {
 		this.pieChart = pieChart;
 	}
 
-	public Viewer_Pie_Chart() {
+	public PieChart() {
 
 		dataset = new DefaultPieDataset();
 		dataset.setValue("", 100);
 //		dataset.setValue("Employed", 96.163);
 
-		pieChart = ChartFactory.createPieChart("Women's Unemployment",
-				  dataset, true, true, false);
-	
-		chartPanel = new ChartPanel(pieChart);
-		
+		pieChart = ChartFactory.createPieChart("Women's Unemployment", dataset, true, true, false);
+
+		chartPanel = (T) new ChartPanel(pieChart);
+
 		chartPanel.setPreferredSize(new Dimension(400, 300));
 		chartPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
-    	chartPanel.setBackground(Color.white);
+		chartPanel.setBackground(Color.white);
 		chartPanel.setVisible(true);
-		
-//		PiePlot piePlot = (PiePlot) pieChart.getPlot();
-//		piePlot.setForegroundAlpha(1);
-//		ChartFrame frame = new ChartFrame("Pie Chart", pieChart);
-//		frame.setVisible(true);
-//		frame.setSize(400,300);
-		MainUI.getCenter().add(chartPanel);
-		MainUI.getInstance().revalidate();
-		
-		
+
+//		MainUI.getCenter().add(chartPanel);
+//		MainUI.getInstance().revalidate();
 	}
 
 }

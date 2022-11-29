@@ -22,7 +22,7 @@ import Dropdown_Menu_Years.Year_From_Action;
 import Dropdown_Menu_Years.Year_To_Action;
 import dropdown_Menu_Analyses.Dropdown_Menu_Analyses_Action;
 import dropdown_Menu_Countries.DropDownMenuCountriesAction;
-import viewers.On_Click_Viewers;
+import viewers.OnClickViewersAction;
 
 public class MainUI extends JFrame {
 
@@ -37,8 +37,8 @@ public class MainUI extends JFrame {
 	private static JComboBox<String> toList;
 
 	private static JComboBox<String> viewsList;
-	
-	private static JPanel center ;
+
+	private static JPanel center;
 
 	public static JPanel getCenter() {
 		return center;
@@ -146,7 +146,7 @@ public class MainUI extends JFrame {
 		viewsNames.add("Report");
 		viewsList = new JComboBox<String>(viewsNames);
 		JButton addView = new JButton("+");
-		addView.addActionListener(new On_Click_Viewers());
+		addView.addActionListener(new OnClickViewersAction());
 		JButton removeView = new JButton("-");
 
 		JLabel methodLabel = new JLabel("        Choose analysis method: ");
@@ -173,25 +173,17 @@ public class MainUI extends JFrame {
 		south.add(methodsList);
 		south.add(recalculate);
 
-		JPanel east = new JPanel();
-
 		// Set charts region
 		center = new JPanel();
 		center.setLayout(new GridLayout(2, 0));
 
 		getContentPane().add(north, BorderLayout.NORTH);
-//		getContentPane().add(east, BorderLayout.EAST);
 		getContentPane().add(south, BorderLayout.SOUTH);
 		getContentPane().add(center, BorderLayout.CENTER);
 
-//		setSize(300, 200);
-//		setLocation(200,200);
-//		pack();
-//		setVisible(true);
-		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setPreferredSize(new Dimension(1200,700));
-		setLocation(100,100);
+		setPreferredSize(new Dimension(1200, 700));
+		setLocation(100, 100);
 		pack();
 		setVisible(true);
 	}

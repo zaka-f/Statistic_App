@@ -2,7 +2,7 @@ package Dropdown_Menu_Years;
 
 import java.util.List;
 
-import mainUI.Error_Message;
+import error_message.Error_Message;
 import mainUI.MainUI;
 
 public class Proxy_Years_Analyses_Data_Processor implements Years_Analyses_Data_Extractor {
