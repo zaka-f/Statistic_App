@@ -17,7 +17,7 @@ import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 
-public class BarChart <T extends JComponent> extends ViewerInterface {
+public class BarChart  extends ViewerInterface {
 
 	private String type;
 	
@@ -25,7 +25,7 @@ public class BarChart <T extends JComponent> extends ViewerInterface {
 
 	private JFreeChart barChart;
 
-	private T chartPanel;
+	private JComponent chartPanel;
 
 	public String getType() {
 		return type;
@@ -35,11 +35,11 @@ public class BarChart <T extends JComponent> extends ViewerInterface {
 		this.type = type;
 	}
 
-	public T getChartPanel() {
+	public Object getChartPanel() {
 		return chartPanel;
 	}
 
-	public void setChartPanel(T chartPanel) {
+	public void setChartPanel(JComponent chartPanel) {
 		this.chartPanel = chartPanel;
 	}
 
@@ -117,7 +117,7 @@ public class BarChart <T extends JComponent> extends ViewerInterface {
 		barChart = new JFreeChart("Mortality vs Expenses & Hospital Beds",
 				new Font("Serif", java.awt.Font.BOLD, 18), plot, true);
 
-		chartPanel = (T) new ChartPanel(barChart);
+		chartPanel = new newChartPanel(barChart, "Bar Chart");
 
 		chartPanel.setPreferredSize(new Dimension(400, 300));
 		chartPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));

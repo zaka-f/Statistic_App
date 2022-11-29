@@ -19,7 +19,7 @@ import org.jfree.data.time.TimeSeries;
 import org.jfree.data.time.TimeSeriesCollection;
 import org.jfree.data.time.Year;
 
-public class ScatterChart <T extends JComponent> extends ViewerInterface{
+public class ScatterChart extends ViewerInterface{
 	
 	private String type;
 	
@@ -27,7 +27,7 @@ public class ScatterChart <T extends JComponent> extends ViewerInterface{
 
 	private JFreeChart scatterChart;
 
-	private T chartPanel;
+	private JComponent chartPanel;
 
 	public String getType() {
 		return type;
@@ -37,11 +37,11 @@ public class ScatterChart <T extends JComponent> extends ViewerInterface{
 		this.type = type;
 	}
 
-	public T getChartPanel() {
+	public JComponent getChartPanel() {
 		return chartPanel;
 	}
 
-	public void setChartPanel(T chartPanel) {
+	public void setChartPanel(JComponent chartPanel) {
 		this.chartPanel = chartPanel;
 	}
 
@@ -124,7 +124,7 @@ public class ScatterChart <T extends JComponent> extends ViewerInterface{
 		scatterChart = new JFreeChart("Mortality vs Expenses & Hospital Beds",
 				new Font("Serif", java.awt.Font.BOLD, 18), plot, true);
 
-		chartPanel = (T) new ChartPanel(scatterChart);
+		chartPanel = new newChartPanel(scatterChart, "Scatter Chart");
 
 		chartPanel.setPreferredSize(new Dimension(400, 300));
 		chartPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));

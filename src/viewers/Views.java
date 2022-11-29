@@ -1,5 +1,6 @@
 package viewers;
 
+import java.awt.Component;
 import java.util.ArrayList;
 
 import javax.swing.JComponent;
@@ -7,17 +8,17 @@ import javax.swing.JPanel;
 
 import org.jfree.chart.ChartPanel;
 
-public class Views <T extends JComponent>{
+public class Views {
 
 	private static Views instance;
 	static JPanel panel;
-	private ArrayList<T> views;
-
-	public ArrayList<T> getViews() {
+	private ArrayList<newChartPanel> views;
+	
+	public ArrayList<newChartPanel> getViews() {
 		return views;
 	}
 
-	public void setViews(ArrayList<T> views) {
+	public void setViews(ArrayList<newChartPanel> views) {
 		this.views = views;
 	}
 
@@ -38,12 +39,12 @@ public class Views <T extends JComponent>{
 	}
 
 	Views(JPanel panel) {
-		views = new ArrayList<T>();
+		views = new ArrayList<newChartPanel>();
 		Views.panel = panel;
 	}
 
-	public void add(T newView) {
-		views.add( newView);
+	public void add(newChartPanel newView) {
+		views.add(  newView);
 		panel.add(newView);
 	}
 

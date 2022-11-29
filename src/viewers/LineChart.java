@@ -20,7 +20,7 @@ import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
-public class LineChart <T extends JComponent> extends ViewerInterface{
+public class LineChart extends ViewerInterface{
 
 	private String type;
 	
@@ -28,7 +28,7 @@ public class LineChart <T extends JComponent> extends ViewerInterface{
 
 	private JFreeChart lineChart;
 	
-	private T chartPanel;
+	private JComponent chartPanel;
 
 	public String getType() {
 		return type;
@@ -38,11 +38,11 @@ public class LineChart <T extends JComponent> extends ViewerInterface{
 		this.type = type;
 	}
 
-	public T getChartPanel() {
+	public JComponent getChartPanel() {
 		return chartPanel;
 	}
 
-	public void setChartPanel(T chartPanel) {
+	public void setChartPanel(JComponent chartPanel) {
 		this.chartPanel = chartPanel;
 	}
 
@@ -130,7 +130,7 @@ public class LineChart <T extends JComponent> extends ViewerInterface{
 
 
 	
-		chartPanel = (T) new ChartPanel(lineChart);
+		chartPanel = new newChartPanel(lineChart,"Line Chart");
 		
 		chartPanel.setPreferredSize(new Dimension(400, 300));
 		chartPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));

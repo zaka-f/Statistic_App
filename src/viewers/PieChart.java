@@ -10,8 +10,9 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
+import org.junit.platform.commons.util.ToStringBuilder;
 
-public class PieChart <T extends JComponent> extends ViewerInterface {
+public class PieChart extends ViewerInterface {
 
 	private String type;
 	
@@ -19,7 +20,7 @@ public class PieChart <T extends JComponent> extends ViewerInterface {
 
 	private JFreeChart pieChart;
 
-	private T chartPanel;
+	private JComponent chartPanel;
 
 	public String getType() {
 		return type;
@@ -29,11 +30,11 @@ public class PieChart <T extends JComponent> extends ViewerInterface {
 		this.type = type;
 	}
 
-	public T getChartPanel() {
+	public JComponent getChartPanel() {
 		return chartPanel;
 	}
 
-	public void setChartPanel(T chartPanel) {
+	public void setChartPanel(JComponent chartPanel) {
 		this.chartPanel = chartPanel;
 	}
 
@@ -59,19 +60,17 @@ public class PieChart <T extends JComponent> extends ViewerInterface {
 		
 		dataset = new DefaultPieDataset();
 		dataset.setValue("", 100);
-//		dataset.setValue("Employed", 96.163);
 
 		pieChart = ChartFactory.createPieChart("Women's Unemployment", dataset, true, true, false);
 
-		chartPanel = (T) new ChartPanel(pieChart);
+		chartPanel = new newChartPanel(pieChart,"Pie Chart");
 
 		chartPanel.setPreferredSize(new Dimension(400, 300));
 		chartPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 		chartPanel.setBackground(Color.white);
 		chartPanel.setVisible(true);
 
-//		MainUI.getCenter().add(chartPanel);
-//		MainUI.getInstance().revalidate();
 	}
+	
 
 }

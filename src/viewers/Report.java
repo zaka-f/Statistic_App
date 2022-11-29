@@ -11,7 +11,7 @@ import javax.swing.JTextArea;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 
-public class Report <T extends JComponent> extends ViewerInterface{
+public class Report extends ViewerInterface{
 
 	private String type;
 	
@@ -19,7 +19,7 @@ public class Report <T extends JComponent> extends ViewerInterface{
 
 	private JFreeChart report;
 
-	private T chartPanel;
+	private JComponent chartPanel;
 
 	public String getType() {
 		return type;
@@ -29,11 +29,11 @@ public class Report <T extends JComponent> extends ViewerInterface{
 		this.type = type;
 	}
 
-	public T getChartPanel() {
+	public JComponent getChartPanel() {
 		return chartPanel;
 	}
 
-	public void setChartPanel(T chartPanel) {
+	public void setChartPanel(JComponent chartPanel) {
 		this.chartPanel = chartPanel;
 	}
 
@@ -76,7 +76,7 @@ public class Report <T extends JComponent> extends ViewerInterface{
 				+ "\tUnemployed: 3.837%\n";
 
 		report.setText(reportMessage);
-		chartPanel = (T) new JScrollPane(report);
+		chartPanel = new JScrollPane(report);
 
 //		MainUI.getCenter().add(chartPanel);
 //		MainUI.getInstance().revalidate();

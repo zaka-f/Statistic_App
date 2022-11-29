@@ -18,7 +18,7 @@ import org.jfree.data.time.TimeSeries;
 import org.jfree.data.time.TimeSeriesCollection;
 import org.jfree.data.time.Year;
 
-public class TimeSeriesChart <T extends JComponent> extends ViewerInterface  {
+public class TimeSeriesChart  extends ViewerInterface  {
 
 	private String type;
 
@@ -26,7 +26,7 @@ public class TimeSeriesChart <T extends JComponent> extends ViewerInterface  {
 
 	private JFreeChart timeSeriesChart;
 
-	private T chartPanel;
+	private JComponent chartPanel;
 
 	public String getType() {
 		return type;
@@ -36,11 +36,11 @@ public class TimeSeriesChart <T extends JComponent> extends ViewerInterface  {
 		this.type = type;
 	}
 
-	public T getChartPanel() {
+	public JComponent getChartPanel() {
 		return chartPanel;
 	}
 
-	public void setChartPanel(T chartPanel) {
+	public void setChartPanel(JComponent chartPanel) {
 		this.chartPanel = chartPanel;
 	}
 
@@ -123,7 +123,7 @@ public class TimeSeriesChart <T extends JComponent> extends ViewerInterface  {
 		timeSeriesChart = new JFreeChart("Mortality vs Expenses & Hospital Beds",
 				new Font("Serif", java.awt.Font.BOLD, 18), plot, true);
 		
-		chartPanel = (T) new ChartPanel(timeSeriesChart);
+		chartPanel = new newChartPanel(timeSeriesChart, "Time Series");
 
 		chartPanel.setPreferredSize(new Dimension(400, 300));
 		chartPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
