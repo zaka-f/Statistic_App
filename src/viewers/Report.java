@@ -13,11 +13,21 @@ import org.jfree.data.general.DefaultPieDataset;
 
 public class Report <T extends JComponent> extends ViewerInterface{
 
+	private String type;
+	
 	private DefaultPieDataset dataset;
 
 	private JFreeChart report;
 
 	private T chartPanel;
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	public T getChartPanel() {
 		return chartPanel;
@@ -43,7 +53,9 @@ public class Report <T extends JComponent> extends ViewerInterface{
 		this.report = report;
 	}
 
-	public Report() {
+	public Report(String type) {
+		
+		this.type=type;
 
 		JTextArea report = new JTextArea();
 		report.setEditable(false);

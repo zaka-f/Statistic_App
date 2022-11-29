@@ -22,8 +22,8 @@ import Dropdown_Menu_Years.Year_From_Action;
 import Dropdown_Menu_Years.Year_To_Action;
 import dropdown_Menu_Analyses.Dropdown_Menu_Analyses_Action;
 import dropdown_Menu_Countries.DropDownMenuCountriesAction;
-import viewers.OnClickViewersActioRemove;
 import viewers.OnClickViewersActionAdd;
+import viewers.OnClickViewersActionRemove;
 
 public class MainUI extends JFrame {
 
@@ -145,11 +145,12 @@ public class MainUI extends JFrame {
 		viewsNames.add("Bar Chart");
 		viewsNames.add("Scatter Chart");
 		viewsNames.add("Report");
+		viewsNames.add("Time Series");
 		viewsList = new JComboBox<String>(viewsNames);
 		JButton addView = new JButton("+");
 		addView.addActionListener(new OnClickViewersActionAdd());
 		JButton removeView = new JButton("-");
-		removeView.addActionListener(new OnClickViewersActioRemove());
+		removeView.addActionListener(new OnClickViewersActionRemove());
 
 		JLabel methodLabel = new JLabel("        Choose analysis method: ");
 

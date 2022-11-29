@@ -22,11 +22,21 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 public class LineChart <T extends JComponent> extends ViewerInterface{
 
+	private String type;
+	
 	private DefaultPieDataset dataset;
 
 	private JFreeChart lineChart;
 	
 	private T chartPanel;
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	public T getChartPanel() {
 		return chartPanel;
@@ -52,7 +62,9 @@ public class LineChart <T extends JComponent> extends ViewerInterface{
 		this.lineChart = pieChart;
 	}
 
-	public LineChart() {
+	public LineChart(String type) {
+		
+		this.type=type;
 
 		XYSeries series1 = new XYSeries("Mortality/1000 births");
 		series1.add(2018, 5.6);

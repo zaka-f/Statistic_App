@@ -13,6 +13,14 @@ public class Views <T extends JComponent>{
 	static JPanel panel;
 	private ArrayList<T> views;
 
+	public ArrayList<T> getViews() {
+		return views;
+	}
+
+	public void setViews(ArrayList<T> views) {
+		this.views = views;
+	}
+
 	// Singeleton Design pattern is being used here
 	public static Views getInstance(JPanel panel) {
 		if (instance == null)
@@ -35,7 +43,7 @@ public class Views <T extends JComponent>{
 	}
 
 	public void add(T newView) {
-		views.add(newView);
+		views.add( newView);
 		panel.add(newView);
 	}
 
