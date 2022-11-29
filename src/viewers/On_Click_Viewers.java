@@ -29,9 +29,9 @@ public class On_Click_Viewers implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		Viewers_Factory factory = new Viewers_Factory();
-		System.out.print("viewers selected\n");
 		Viewers_Interface pie =  factory.createViewer("PieChart");
-		System.out.print("viewers added\n");
+//		factory.createViewer("PieChart");
+//		factory.createViewer("PieChart");
 	} 
 
 }

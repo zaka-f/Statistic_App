@@ -67,7 +67,7 @@ public class Viewer_Pie_Chart extends Viewers_Interface {
 //		ChartFrame frame = new ChartFrame("Pie Chart", pieChart);
 //		frame.setVisible(true);
 //		frame.setSize(400,300);
-		MainUI.getWest().add(chartPanel);
+		MainUI.getCenter().add(chartPanel);
 		MainUI.getInstance().revalidate();
 		
 		

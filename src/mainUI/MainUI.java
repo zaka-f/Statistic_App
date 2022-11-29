@@ -38,14 +38,14 @@ public class MainUI extends JFrame {
 
 	private static JComboBox<String> viewsList;
 	
-	private static JPanel west ;
+	private static JPanel center ;
 
-	public static JPanel getWest() {
-		return west;
+	public static JPanel getCenter() {
+		return center;
 	}
 
-	public static void setWest(JPanel west) {
-		MainUI.west = west;
+	public static void setCenter(JPanel center) {
+		MainUI.center = center;
 	}
 
 	public static JComboBox<String> getViewsList() {
@@ -176,13 +176,13 @@ public class MainUI extends JFrame {
 		JPanel east = new JPanel();
 
 		// Set charts region
-		west = new JPanel();
-		west.setLayout(new GridLayout(2, 0));
+		center = new JPanel();
+		center.setLayout(new GridLayout(2, 0));
 
 		getContentPane().add(north, BorderLayout.NORTH);
-		getContentPane().add(east, BorderLayout.EAST);
+//		getContentPane().add(east, BorderLayout.EAST);
 		getContentPane().add(south, BorderLayout.SOUTH);
-		getContentPane().add(west, BorderLayout.WEST);
+		getContentPane().add(center, BorderLayout.CENTER);
 
 //		setSize(300, 200);
 //		setLocation(200,200);
@@ -190,10 +190,8 @@ public class MainUI extends JFrame {
 //		setVisible(true);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setPreferredSize(new Dimension(900,600));
-		setLocation(200,200);
-//		setMaximumSize(new Dimension(900,600));
-//		setMinimumSize(new Dimension(900,600));
+		setPreferredSize(new Dimension(1200,700));
+		setLocation(100,100);
 		pack();
 		setVisible(true);
 	}
