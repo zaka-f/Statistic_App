@@ -5,8 +5,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
-import org.jfree.data.json.impl.JSONArray;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 

@@ -1,4 +1,4 @@
-package LoginArea;
+package loginArea;
 
 import java.util.ArrayList;
 

@@ -1,13 +1,5 @@
 package performinganalyses;
 
-import viewers.BarChart;
-import viewers.LineChart;
-import viewers.PieChart;
-import viewers.Report;
-import viewers.ScatterChart;
-import viewers.TimeSeriesChart;
-import viewers.ViewerSuperClass;
-
 public class FactoryGetAnalyses {
 
 	public SuperClassGetData FactoryGetAnalyses(String analysis) {

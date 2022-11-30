@@ -5,8 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JComponent;
 
-import org.jfree.chart.ChartPanel;
-
+import error_message.ErrorMessage;
 import mainUI.MainUI;
 
 public class OnClickViewersActionAdd implements ActionListener {
@@ -18,12 +17,20 @@ public class OnClickViewersActionAdd implements ActionListener {
 		// TODO Auto-generated method stub
 		ViewersFactory factory = new ViewersFactory();
 		String newView = String.valueOf(MainUI.getViewsList().getSelectedItem());
-		System.out.print(newView + "\n");
+		String newMethod = String.valueOf(MainUI.getMethodsList().getSelectedItem());
+		//System.out.print(newView + "\n");
+		CompatibilityCheckerProxy checker = new CompatibilityCheckerProxy(newMethod, newView);
+		boolean access = checker.isInvalid();
+		if(access) {
+			new ErrorMessage("This graph type is not compatible");
+		}
+		else {
 		ViewerSuperClass pie = factory.createViewer(newView);
 		Views.getInstance(MainUI.getCenter());
 		Views.getInstance().add((JComponent) pie.getChartPanel());
 		System.out.print("chartpanel added \n");
 		MainUI.getInstance().revalidate();
+		}
 
 	}
 

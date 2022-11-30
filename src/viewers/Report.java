@@ -5,7 +5,6 @@ import java.awt.Dimension;
 
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import org.jfree.chart.JFreeChart;

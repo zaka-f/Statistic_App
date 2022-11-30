@@ -1,4 +1,4 @@
-package LoginArea;
+package loginArea;
 
 import javax.swing.JLabel;
 

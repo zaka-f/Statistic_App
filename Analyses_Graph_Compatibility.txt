@@ -1,0 +1,25 @@
+{
+    "analyses": [
+      {
+        "analysis": "Current Health Expenditure % change",
+        "incompatible": "Pie Chart"
+      },
+      {
+        "analysis": "Govt Expenditure on Education vs Health Expenditure % change",
+        "incompatible": "Pie Chart"
+      },
+      {
+        "analysis": "CO2 Emissions vs Energy Use vs PM 2.5 Air Pollution(MEA) % change",
+        "incompatible": "Pie Chart"
+      },
+      {
+        "analysis": "CO2 Emissions vs GDP Ratio",
+        "incompatible": "Pie Chart"
+      },
+      {
+        "analysis": "Current Health Expenditure % change",
+        "incompatible": "Line Chart"
+      }
+      
+    ]
+  }

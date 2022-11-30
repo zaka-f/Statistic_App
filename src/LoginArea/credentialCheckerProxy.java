@@ -1,8 +1,6 @@
-package LoginArea;
+package loginArea;
 
 import java.util.ArrayList;
-
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.IconifyAction;
 
 public class credentialCheckerProxy implements credentialCheckerDataRetriever {
 	// instance variables

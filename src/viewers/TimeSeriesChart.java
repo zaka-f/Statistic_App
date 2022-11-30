@@ -7,7 +7,6 @@ import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 
-import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.DateAxis;
 import org.jfree.chart.axis.NumberAxis;

@@ -5,12 +5,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
-import javax.management.loading.PrivateClassLoader;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
-
-import mainUI.MainUI;
 
 public class AverageForestArea extends SuperClassGetData {
 
@@ -24,42 +20,40 @@ public class AverageForestArea extends SuperClassGetData {
 		this.country = country;
 		this.country = setCountryCode(country);
 		updateYears();
-		data = retreiveData(urlString);
+		this.data = retreiveData(urlString);
 		setURL();
-//		this.country = country;
-//		setCountry();
-//		updateYears();
-//		setURL();
+		System.out.println(urlString);
+		System.out.println(this.data);
 	}
 
-//	private void retreiveData() {
-//		try {
-//			URL url = new URL(urlString);
-//			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-//			conn.setRequestMethod("GET");
-//			conn.connect();
-//			int responsecode = conn.getResponseCode();
-//// IF THE RESPONSE IS 200 OK GET THE LINE WITH THE RESULTS
-//			if (responsecode == 200) {
-//				String inline = "";
-//				Scanner sc = new Scanner(url.openStream());
-//				while (sc.hasNext()) {
-//					inline += sc.nextLine();
-//				}
-//				sc.close();
-//// PROCESS THE JSON AS ONE LINE
-//				data = new JsonParser().parse(inline).getAsJsonArray();
-//				int size = data.size();
-//			}
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block e.printStackTrace();
-//		}
-//	}
-//
-//	private void setCountry() {
-//		this.country = setCountryCode(this.country);
-//	}
-//
+	private void processData() {
+		
+	}
+	
+	private void retreiveData() {
+		try {
+			URL url = new URL(urlString);
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			conn.connect();
+			int responsecode = conn.getResponseCode();
+// IF THE RESPONSE IS 200 OK GET THE LINE WITH THE RESULTS
+			if (responsecode == 200) {
+				String inline = "";
+				Scanner sc = new Scanner(url.openStream());
+				while (sc.hasNext()) {
+					inline += sc.nextLine();
+				}
+				sc.close();
+// PROCESS THE JSON AS ONE LINE
+				data = new JsonParser().parse(inline).getAsJsonArray();
+
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block e.printStackTrace();
+		}
+	}
+
 	private void updateYears() {
 //		this.yearStart = (String) MainUI.getFromList().getSelectedItem();
 //		this.yearEnd = (String) MainUI.getToList().getSelectedItem();

@@ -1,4 +1,4 @@
-package LoginArea;
+package loginArea;
 
 //Facade design pattern
 public class UILauncher {

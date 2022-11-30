@@ -1,12 +1,9 @@
 package viewers;
 
-import java.awt.Component;
 import java.util.ArrayList;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-
-import org.jfree.chart.ChartPanel;
 
 public class Views {
 

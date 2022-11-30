@@ -1,10 +1,9 @@
-package LoginArea;
+package loginArea;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import mainUI.MainUI;
-import mainUI.MainUI_Luncher;
+import mainUI.MainUILuncher;
 
 public class actionButtonLogin implements ActionListener {
 
@@ -21,8 +20,8 @@ public class actionButtonLogin implements ActionListener {
 		// makes a decision depending on if the user and password are in the data base
 		if (access) {
 			UILauncher.getnLoginPage().dispose();
-			new MainUI_Luncher();
-			MainUI_Luncher.main(null);
+			new MainUILuncher();
+			MainUILuncher.main(null);
 		} else {
 			new displayMessageLoginUI();
 		}

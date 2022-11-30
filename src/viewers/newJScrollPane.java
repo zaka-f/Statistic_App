@@ -3,8 +3,6 @@ package viewers;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import org.jfree.chart.JFreeChart;
-
 public class newJScrollPane extends JScrollPane{
 
 	private String type;

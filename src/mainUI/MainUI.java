@@ -18,12 +18,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import Dropdown_Menu_Years.Year_From_Action;
-import Dropdown_Menu_Years.Year_To_Action;
-import dropdown_Menu_Analyses.Dropdown_Menu_Analyses_Action;
-import dropdown_Menu_Countries.DropDownMenuCountriesAction;
+import analyses.DropdownMenuAnalysesAction;
+import countries.DropDownMenuCountriesAction;
 import viewers.OnClickViewersActionAdd;
 import viewers.OnClickViewersActionRemove;
+import years.YearFromAction;
+import years.YearToAction;
 
 public class MainUI extends JFrame {
 
@@ -122,9 +122,9 @@ public class MainUI extends JFrame {
 		fromList = new JComboBox<String>(years);
 		toList = new JComboBox<String>(years);
 
-		fromList.addActionListener(new Year_From_Action());
+		fromList.addActionListener(new YearFromAction());
 
-		toList.addActionListener(new Year_To_Action());
+		toList.addActionListener(new YearToAction());
 
 		JPanel north = new JPanel();
 		north.add(chooseCountryLabel);
@@ -163,7 +163,7 @@ public class MainUI extends JFrame {
 		methodsNames.add("Average Forest Area %");
 
 		methodsList = new JComboBox<String>(methodsNames);
-		methodsList.addActionListener(new Dropdown_Menu_Analyses_Action());
+		methodsList.addActionListener(new DropdownMenuAnalysesAction());
 
 		JPanel south = new JPanel();
 		south.add(viewsLabel);
