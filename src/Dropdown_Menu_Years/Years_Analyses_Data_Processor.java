@@ -59,7 +59,13 @@ public class Years_Analyses_Data_Processor implements Years_Analyses_Data_Extrac
 			String tempAnalyse = String.valueOf(tempAnalyses.get("analyses"));
 			int tempYear = Integer.parseInt(String.valueOf(tempAnalyses.get("year")));
 
-			isfetchable.add(tempYear);
+			System.out.println(tempAnalyse + "\n");
+			System.out.println(this.analyses + "\n");
+			if (tempAnalyse.equals(this.analyses)) {
+				System.out.println("here \n");
+				isfetchable.add(tempYear);
+			}
+			
 
 		}
 

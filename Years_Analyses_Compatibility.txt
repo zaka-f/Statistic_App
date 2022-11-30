@@ -1,27 +1,27 @@
 {
     "analysesXyears": [
       {
-        "analyses": "Total Population",
+        "analyses": "Current Health Expenditure % change",
         "year": "2010"
       },
       {
-        "analyses": "Total Population vs Forest Area",
+        "analyses": "Govt Expenditure on Education vs Health Expenditure % change",
         "year": "2011"
       },
       {
-        "analyses": "Total Population vs Access To Electricity from Clean Energy & Electricity Production from Coal Sources",
+        "analyses": "CO2 Emissions vs Energy Use vs PM 2.5 Air Pollution(MEA) % change",
         "year": "2012"
       }
       {
-        "analyses": "Energy Use vs GDP",
+        "analyses": "CO2 Emissions vs GDP Ratio",
         "year": "2013"
       }
       {
-        "analyses": "Forest Area vs GDP",
+        "analyses": "Average Govt Expenditure on Education %(of GDP)",
         "year": "2014"
       }
       {
-        "analyses": "ForestÂ Area",
+        "analyses": "Average Forest Area %",
         "year": "2015"
       }
     ]

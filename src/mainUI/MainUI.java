@@ -155,13 +155,12 @@ public class MainUI extends JFrame {
 		JLabel methodLabel = new JLabel("        Choose analysis method: ");
 
 		Vector<String> methodsNames = new Vector<String>();
-		methodsNames.add("Total Population");
-		methodsNames.add("Total Population vs Forest Area");
-		methodsNames.add(
-				"Total Population vs Access To Electricity from Clean Energy & Electricity Production from Coal Sources");
-		methodsNames.add("Energy Use vs GDP");
-		methodsNames.add("Forest Area vs GDP");
-		methodsNames.add("Forest Area");
+		methodsNames.add("Current Health Expenditure % change");
+		methodsNames.add("Govt Expenditure on Education vs Health Expenditure % change");
+		methodsNames.add("CO2 Emissions vs Energy Use vs PM 2.5 Air Pollution(MEA) % change");
+		methodsNames.add("CO2 Emissions vs GDP Ratio");
+		methodsNames.add("Average Govt Expenditure on Education %(of GDP)");
+		methodsNames.add("Average Forest Area %");
 
 		methodsList = new JComboBox<String>(methodsNames);
 		methodsList.addActionListener(new Dropdown_Menu_Analyses_Action());
