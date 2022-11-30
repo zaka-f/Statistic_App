@@ -18,7 +18,7 @@ import org.jfree.data.time.TimeSeries;
 import org.jfree.data.time.TimeSeriesCollection;
 import org.jfree.data.time.Year;
 
-public class TimeSeriesChart  extends ViewerInterface  {
+public class TimeSeriesChart  extends ViewerSuperClass  {
 
 	private String type;
 

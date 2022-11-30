@@ -2,7 +2,7 @@ package viewers;
 
 public class ViewersFactory {
 
-	public ViewerInterface createViewer(String view) {
+	public ViewerSuperClass createViewer(String view) {
 		if (view == null || view.isEmpty())
 			return null;
 		switch (view) {

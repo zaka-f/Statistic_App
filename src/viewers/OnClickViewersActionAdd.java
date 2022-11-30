@@ -19,9 +19,9 @@ public class OnClickViewersActionAdd implements ActionListener {
 		ViewersFactory factory = new ViewersFactory();
 		String newView = String.valueOf(MainUI.getViewsList().getSelectedItem());
 		System.out.print(newView + "\n");
-		ViewerInterface pie = factory.createViewer(newView);
+		ViewerSuperClass pie = factory.createViewer(newView);
 		Views.getInstance(MainUI.getCenter());
-		Views.getInstance().add((newChartPanel) pie.getChartPanel());
+		Views.getInstance().add((JComponent) pie.getChartPanel());
 		System.out.print("chartpanel added \n");
 		MainUI.getInstance().revalidate();
 

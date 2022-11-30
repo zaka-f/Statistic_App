@@ -1,18 +1,9 @@
 package viewers;
 
-import javax.swing.JComponent;
 
-public class ViewerInterface {
-
-	private Object panel;
+interface ViewerInterface {
 	
-	public String getType() {
-		return null;
-	}
+	public String getType();
 	
-	public Object getChartPanel() {
-		// TODO Auto-generated method stub
-		return panel;
-	}
-
+	public Object getChartPanel();
 }

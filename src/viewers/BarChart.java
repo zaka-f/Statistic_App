@@ -17,7 +17,7 @@ import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 
-public class BarChart  extends ViewerInterface {
+public class BarChart  extends ViewerSuperClass {
 
 	private String type;
 	

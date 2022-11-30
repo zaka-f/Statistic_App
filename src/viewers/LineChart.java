@@ -20,7 +20,7 @@ import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
-public class LineChart extends ViewerInterface{
+public class LineChart extends ViewerSuperClass{
 
 	private String type;
 	

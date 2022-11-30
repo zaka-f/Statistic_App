@@ -12,13 +12,13 @@ public class Views {
 
 	private static Views instance;
 	static JPanel panel;
-	private ArrayList<newChartPanel> views;
+	private ArrayList<JComponent> views;
 	
-	public ArrayList<newChartPanel> getViews() {
+	public ArrayList<JComponent> getViews() {
 		return views;
 	}
 
-	public void setViews(ArrayList<newChartPanel> views) {
+	public void setViews(ArrayList<JComponent> views) {
 		this.views = views;
 	}
 
@@ -39,11 +39,11 @@ public class Views {
 	}
 
 	Views(JPanel panel) {
-		views = new ArrayList<newChartPanel>();
+		views = new ArrayList<JComponent>();
 		Views.panel = panel;
 	}
 
-	public void add(newChartPanel newView) {
+	public void add(JComponent newView) {
 		views.add(  newView);
 		panel.add(newView);
 	}

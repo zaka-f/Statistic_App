@@ -12,7 +12,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 import org.junit.platform.commons.util.ToStringBuilder;
 
-public class PieChart extends ViewerInterface {
+public class PieChart extends ViewerSuperClass {
 
 	private String type;
 	
