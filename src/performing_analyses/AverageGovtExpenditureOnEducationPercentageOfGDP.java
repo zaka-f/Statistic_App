@@ -16,6 +16,7 @@ public class AverageGovtExpenditureOnEducationPercentageOfGDP extends SuperClass
 	private double average;
 
 	AverageGovtExpenditureOnEducationPercentageOfGDP(String country) {
+		
 		this.country = country;
 		this.country = setCountryCode(country);
 	    yearStart = updateStartYear();
@@ -23,6 +24,11 @@ public class AverageGovtExpenditureOnEducationPercentageOfGDP extends SuperClass
 	    urlString = setURL(this.country, yearStart, yearEnd,"SE.XPD.TOTL.GD.ZS");
 		this.jsonArray = retreiveData(urlString);
 		yearValueHashMap = new HashMap<Integer, Double>();
+		
+		System.out.println();
+		System.out.println("Average Govt Expenditure on Education %(of GDP)");
+		System.out.println();
+		
 		processData();
 
 	}

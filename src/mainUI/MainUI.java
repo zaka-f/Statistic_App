@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 
 import analyses.DropdownMenuAnalysesAction;
 import countries.DropDownMenuCountriesAction;
-import renderingResults.RenderingResultAction;
+import renderingResults.ActionButtonRecalculate;
 import viewers.OnClickViewersActionAdd;
 import viewers.OnClickViewersActionRemove;
 import viewers.newChartPanel;
@@ -138,7 +138,7 @@ public class MainUI extends JFrame {
 
 		// Set bottom bar
 		JButton recalculate = new JButton("Recalculate");
-		recalculate.addActionListener(new RenderingResultAction());
+		recalculate.addActionListener(new ActionButtonRecalculate());
 
 		JLabel viewsLabel = new JLabel("Available Views: ");
 
@@ -159,8 +159,8 @@ public class MainUI extends JFrame {
 
 		Vector<String> methodsNames = new Vector<String>();
 		methodsNames.add("Current Health Expenditure %");
-		methodsNames.add("Govt Expenditure on Education vs Health Expenditure % change");
-		methodsNames.add("CO2 Emissions vs Energy Use vs PM 2.5 Air Pollution(MEA) % change");
+		methodsNames.add("Govt Expenditure on Education vs Health Expenditure %");
+		methodsNames.add("CO2 Emissions vs Energy Use vs PM 2.5 Air Pollution(MEA)");
 		methodsNames.add("CO2 Emissions vs GDP Ratio");
 		methodsNames.add("Average Govt Expenditure on Education %(of GDP)");
 		methodsNames.add("Average Forest Area %");

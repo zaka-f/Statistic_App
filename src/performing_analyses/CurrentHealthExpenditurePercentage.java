@@ -24,11 +24,13 @@ public class CurrentHealthExpenditurePercentage extends SuperClassGetData{
 	    urlString = setURL(this.country, yearStart, yearEnd, "SH.XPD.CHEX.GD.ZS");
 		this.jsonArray = retreiveData(urlString);
 		yearValueHashMap = new HashMap<Integer, Double>();
+		
+		System.out.println();
+		System.out.println("Current Health Expenditure %");
+		System.out.println();
+		
 		processData();
 		
-//		System.out.println(urlString);
-//		System.out.println(this.jsonArray);
-//		System.out.println(yearValueHashMap);
 	}
 
 	private void processData() {
@@ -51,7 +53,7 @@ public class CurrentHealthExpenditurePercentage extends SuperClassGetData{
 								currentHealthExpenditurePercentageForYear = jsonArray.get(1).getAsJsonArray().get(i).getAsJsonObject().get("value")
 										.getAsDouble();
 
-							System.out.println("Current health expenditure percentage for a year : " + year + " is " + currentHealthExpenditurePercentageForYear);
+							System.out.println("Current health expenditure percentage for a year : " + year + " is " + currentHealthExpenditurePercentageForYear+" %");
 							cummulativeValue = cummulativeValue + currentHealthExpenditurePercentageForYear;
 							yearValueHashMap.put(year, currentHealthExpenditurePercentageForYear);
 	}

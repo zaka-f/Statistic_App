@@ -5,11 +5,11 @@
         "incompatible": "Pie Chart"
       },
       {
-        "analysis": "Govt Expenditure on Education vs Health Expenditure % change",
+        "analysis": "Govt Expenditure on Education vs Health Expenditure %",
         "incompatible": "Pie Chart"
       },
       {
-        "analysis": "CO2 Emissions vs Energy Use vs PM 2.5 Air Pollution(MEA) % change",
+        "analysis": "CO2 Emissions vs Energy Use vs PM 2.5 Air Pollution(MEA)",
         "incompatible": "Pie Chart"
       },
       {

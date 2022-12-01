@@ -7,7 +7,7 @@ import mainUI.MainUI;
 import performing_analyses.FactoryGetData;
 import viewers.newChartPanel;
 
-public class RenderingResultAction implements ActionListener {
+public class ActionButtonRecalculate implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

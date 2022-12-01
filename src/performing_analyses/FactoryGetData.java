@@ -2,6 +2,7 @@ package performing_analyses;
 
 import mainUI.MainUI;
 
+//Here Factory Design Pattern
 public class FactoryGetData {
 
 	String country = (String)MainUI.getCountriesList().getSelectedItem();
@@ -14,12 +15,12 @@ public class FactoryGetData {
 			return new AverageForestArea(country);
 		case "Current Health Expenditure %":
 			return new CurrentHealthExpenditurePercentage(country);
-//		case "Report":
-//			return new Report();
-//		case "Bar Chart":
-//			return new BarChart();
-//		case "Time Series":
-//			return new TimeSeriesChart();
+		case "CO2 Emissions vs GDP Ratio":
+			return new CO2EmissionsvsGDPRatio(country);
+		case "Average Govt Expenditure on Education %(of GDP)":
+			return new AverageGovtExpenditureOnEducationPercentageOfGDP(country);
+		case "Govt Expenditure on Education vs Health Expenditure %":
+			return new GovtExpenditureonEducatiOnVsHealthExpenditurePercentage(country);
 //		case "Scatter Chart":
 //			return new ScatterChart();
 		default:
