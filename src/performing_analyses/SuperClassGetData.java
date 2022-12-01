@@ -35,12 +35,10 @@ public class SuperClassGetData {
 		return urlString;
 	}
 	protected String updateStartYear() {
-//		return (String) MainUI.getFromList().getSelectedItem();
-		return "2000";	
+		return (String) MainUI.getFromList().getSelectedItem();
 	}
 	protected String updateEndYear() {
-//		return (String) MainUI.getToList().getSelectedItem();
-		return "2002";	
+		return (String) MainUI.getToList().getSelectedItem();
 	}
 
 

@@ -54,9 +54,7 @@ public class YearsDecider {
 			correct = false;
 			System.out.println("Year for analyses is not available\n");
 			new ErrorMessage("the years selected are not valid for the selected type of analysis");
-		} else {
-			System.out.println("Year for analyses is available\n");
-		}
+		} 
 		return correct;
 	}
 

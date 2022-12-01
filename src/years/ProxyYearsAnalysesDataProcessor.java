@@ -34,8 +34,6 @@ public class ProxyYearsAnalysesDataProcessor implements YearsAnalysesDataExtract
 		int start = Integer.parseInt((String) MainUI.getFromList().getSelectedItem());
 		int end = Integer.parseInt((String) MainUI.getToList().getSelectedItem());
 
-		System.out.println(start+" to "+ end + "\n");
-		System.out.println(bannedYears + "\n");
 		for (Integer year : bannedYears) {
 			if (year >= start && year <= end) {
 				flag = false;

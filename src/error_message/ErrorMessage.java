@@ -18,7 +18,7 @@ public class ErrorMessage extends JFrame{
 		// password label
 		message = new JLabel();
 		message.setText(text);
-//		"This Country's data is not avaiable for processing for now"
+
 
 		// Creating a panel
 		panel = new JPanel();

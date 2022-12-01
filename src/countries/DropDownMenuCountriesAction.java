@@ -15,7 +15,6 @@ public class DropDownMenuCountriesAction implements ActionListener {
 		ProxyCountryFetchableChecker checker = new ProxyCountryFetchableChecker(
 				String.valueOf(MainUI.getCountriesList().getSelectedItem()));
 		boolean fetchable = checker.isFetchable();
-		System.out.print(fetchable);
 
 		// makes a decision depending on if the country's data is fetchable
 		if (fetchable) {

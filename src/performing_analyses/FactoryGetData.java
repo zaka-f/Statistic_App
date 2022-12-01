@@ -21,8 +21,8 @@ public class FactoryGetData {
 			return new AverageGovtExpenditureOnEducationPercentageOfGDP(country);
 		case "Govt Expenditure on Education vs Health Expenditure %":
 			return new GovtExpenditureonEducatiOnVsHealthExpenditurePercentage(country);
-//		case "Scatter Chart":
-//			return new ScatterChart();
+		case "CO2 Emissions vs Energy Use vs PM 2.5 Air Pollution(MEA)":
+			return new CO2EmissionsVsEnergyUseVsPM25AirPollutionMEA(country);
 		default:
 			throw new IllegalArgumentException("Unknown analysis " + analysis);
 		}

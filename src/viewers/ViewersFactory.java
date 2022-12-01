@@ -1,5 +1,7 @@
 package viewers;
 
+//Here Factory Design Pattern was used
+
 public class ViewersFactory {
 
 	public ViewerSuperClass createViewer(String view) {

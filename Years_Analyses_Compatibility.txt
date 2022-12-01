@@ -5,11 +5,11 @@
         "year": "2010"
       },
       {
-        "analyses": "Govt Expenditure on Education vs Health Expenditure % change",
+        "analyses": "Govt Expenditure on Education vs Health Expenditure %",
         "year": "2011"
       },
       {
-        "analyses": "CO2 Emissions vs Energy Use vs PM 2.5 Air Pollution(MEA) % change",
+        "analyses": "CO2 Emissions vs Energy Use vs PM 2.5 Air Pollution(MEA)",
         "year": "2012"
       }
       {

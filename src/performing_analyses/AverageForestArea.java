@@ -59,9 +59,4 @@ public class AverageForestArea extends SuperClassGetData {
 		
 	}
 
-
-	public static void main(String[] args) {
-		new AverageForestArea("Canada");
-	}
-
 }

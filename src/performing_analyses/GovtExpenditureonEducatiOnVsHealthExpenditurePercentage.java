@@ -117,7 +117,4 @@ public class GovtExpenditureonEducatiOnVsHealthExpenditurePercentage extends Sup
 		
 	}
 
-	public static void main(String[] args) {
-		new GovtExpenditureonEducatiOnVsHealthExpenditurePercentage("Canada");
-	}
 }

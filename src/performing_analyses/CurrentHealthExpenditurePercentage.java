@@ -59,8 +59,4 @@ public class CurrentHealthExpenditurePercentage extends SuperClassGetData{
 	}
 	}
 
-
-	public static void main(String[] args) {
-		new CurrentHealthExpenditurePercentage("Canada");
-	}
 }

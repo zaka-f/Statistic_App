@@ -60,16 +60,10 @@ public class AverageGovtExpenditureOnEducationPercentageOfGDP extends SuperClass
 		average = cummulativeValue/(Double.parseDouble(yearEnd) - Double.parseDouble(yearStart) + 1);
 	System.out.println("Average forest Area percentage over the years is "+ average+ " %");
 
-		
-//		for(Entry<Integer, Double> set : yearValueHashMap.entrySet()) {
-////			yearValueHashMap.replace(set.getKey(), set.getValue(), set.getValue()/cummulativeValue);
-//		}
+
 		
 	}
 
 
-	public static void main(String[] args) {
-		new AverageGovtExpenditureOnEducationPercentageOfGDP("Canada");
-	}
 
 }
