@@ -27,8 +27,11 @@ import viewers.newChartPanel;
 import years.YearFromAction;
 import years.YearToAction;
 
+//Singelton design pattern was used here
+
 public class MainUI extends JFrame {
 
+	//Intance Variable
 	private static MainUI instance;
 
 	private static JComboBox<String> countriesList;
@@ -43,6 +46,7 @@ public class MainUI extends JFrame {
 
 	private static JPanel center;
 
+	// Getter and Setter methods.
 	public static JPanel getCenter() {
 		return center;
 	}

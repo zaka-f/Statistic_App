@@ -5,13 +5,14 @@ import java.awt.event.ActionListener;
 
 import mainUI.MainUI;
 
-public class DropdownMenuAnalysesAction implements ActionListener{
+public class DropdownMenuAnalysesAction implements ActionListener {
 	@Override
+
+	// Action performed when an analis is selected.
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-//		System.out.println(String.valueOf(MainUI.getMethodsList().getSelectedItem()));
-	    new Analyses(String.valueOf(MainUI.getMethodsList().getSelectedItem()));
-		
+
+		new Analyses(String.valueOf(MainUI.getMethodsList().getSelectedItem()));
+
 	}
 
 }

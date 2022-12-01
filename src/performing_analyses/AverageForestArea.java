@@ -5,6 +5,7 @@ import com.google.gson.JsonArray;
 
 public class AverageForestArea extends SuperClassGetData {
 
+	
 	private String country;
 	private String yearStart;
 	private String yearEnd;

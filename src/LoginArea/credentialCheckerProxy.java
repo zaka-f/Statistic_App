@@ -23,6 +23,7 @@ public class credentialCheckerProxy implements credentialCheckerDataRetriever {
 		return comboArrayList;
 	}
 
+	// Returns a boolean that confirms if the user id in the database or not.
 	public boolean isUser() {
 
 		getCombo();

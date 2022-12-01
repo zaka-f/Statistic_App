@@ -7,6 +7,7 @@ public class FactoryGetData {
 
 	String country = (String)MainUI.getCountriesList().getSelectedItem();
 	
+	//Returns the appropriate getData child class when given the type of analisis
 	public SuperClassGetData getData(String analysis) {
 		if (analysis == null || analysis.isEmpty())
 			return null;

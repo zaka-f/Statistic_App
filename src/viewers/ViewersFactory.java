@@ -4,6 +4,7 @@ package viewers;
 
 public class ViewersFactory {
 
+	// returns a type of viwer when given the type of viwer as a string
 	public ViewerSuperClass createViewer(String view) {
 		if (view == null || view.isEmpty())
 			return null;

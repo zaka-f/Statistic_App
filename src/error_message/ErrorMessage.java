@@ -37,6 +37,7 @@ public class ErrorMessage extends JFrame{
 		add(panel);
 		setTitle("Login Page");
 		setSize(490, 170);
+		setLocation(400,400);
 		setVisible(true);
 	}
 

@@ -44,12 +44,12 @@ public class CountryFetchableChecker implements CountryFetchableDataRetreiver {
 		}
 	}
 
-	// function that checks whether the user exists or not in the file
+	// function that returns the value of "fetchable" assossiated with the country
 	public String getFetchable() {
 
 		String isfetchable = "";
 
-		// Loop through all users and check their password;
+		// Loop through all the countries
 		for (Object country : data) {
 
 			JSONObject tempUser = (JSONObject) country;

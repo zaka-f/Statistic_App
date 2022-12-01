@@ -10,7 +10,7 @@ public class MainUILuncher {
 	}
 
 	public static void main(String[] args) {
-		// Initialization of the login page
+		// Initialization of the main UI page
 		nMainUI = MainUI.getInstance();
 		
 	}

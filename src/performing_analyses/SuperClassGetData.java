@@ -11,6 +11,8 @@ import com.google.gson.JsonParser;
 import mainUI.MainUI;
 
 public class SuperClassGetData {
+	
+	//returns the country code
 	protected String setCountryCode(String country) {	
 		switch (country) {
 		case "Brazil":
@@ -27,6 +29,8 @@ public class SuperClassGetData {
 			throw new IllegalArgumentException("Unknown analysis " + country);
 		}	
     }
+	
+	// returns the URL for the query when given the start year, end year , country code , and the analis id.
 	protected String setURL(String country, String startYear, String endYear, String analisCode) {
 		String urlString = String.format(
 				"http://api.worldbank.org/v2/country/%s/indicator/%s?date=%s:%s&format=json", country,
@@ -34,15 +38,18 @@ public class SuperClassGetData {
 
 		return urlString;
 	}
+	
+	// Returns the start year selected
 	protected String updateStartYear() {
 		return (String) MainUI.getFromList().getSelectedItem();
 	}
+	
+	//returns the end year selected
 	protected String updateEndYear() {
 		return (String) MainUI.getToList().getSelectedItem();
 	}
 
-
-
+    //retreives the data from the online bank
 	protected JsonArray retreiveData(String urlString) {
 		try {
 			URL url = new URL(urlString);
