@@ -1,9 +1,10 @@
-package performinganalyses;
+package performing_analyses;
 
 import java.util.HashMap;
+
 import com.google.gson.JsonArray;
 
-public class AverageForestArea extends SuperClassGetData {
+public class AverageGovtExpenditureOnEducationPercentageOfGDP extends SuperClassGetData{
 
 	private String country;
 	private String yearStart;
@@ -14,19 +15,20 @@ public class AverageForestArea extends SuperClassGetData {
 	private double cummulativeValue;
 	private double average;
 
-	AverageForestArea(String country) {
+	AverageGovtExpenditureOnEducationPercentageOfGDP(String country) {
 		this.country = country;
 		this.country = setCountryCode(country);
 	    yearStart = updateStartYear();
 	    yearEnd = updateEndYear();
-	    urlString = setURL(this.country, yearStart, yearEnd,"AG.LND.FRST.ZS");
+	    urlString = setURL(this.country, yearStart, yearEnd,"SE.XPD.TOTL.GD.ZS");
 		this.jsonArray = retreiveData(urlString);
 		yearValueHashMap = new HashMap<Integer, Double>();
 		processData();
+
 	}
 
 	private void processData() {
-		double averageForestAreaForYear=0;
+		double govtExpenditureOnEducationPercentageOfGDP=0;
 		cummulativeValue = 0;
 		int size = jsonArray.size();
 		int sizeOfResults = jsonArray.get(1).getAsJsonArray().size();
@@ -38,16 +40,16 @@ public class AverageForestArea extends SuperClassGetData {
 							// CHECK IF THERE IS A VALUE FOR THE POPULATION FOR A
 							// GIVEN YEAR
 							if (jsonArray.get(1).getAsJsonArray().get(i).getAsJsonObject().get("value").isJsonNull())
-								averageForestAreaForYear = 0;
+								govtExpenditureOnEducationPercentageOfGDP = 0;
 							else
 								// GET THE POPULATION FOR THE GIVEN YEAR FROM THE
 								// “value” FIELD
-								averageForestAreaForYear = jsonArray.get(1).getAsJsonArray().get(i).getAsJsonObject().get("value")
+								govtExpenditureOnEducationPercentageOfGDP = jsonArray.get(1).getAsJsonArray().get(i).getAsJsonObject().get("value")
 										.getAsDouble();
 
-							System.out.println("Forest area for : " + year + " is " + averageForestAreaForYear+ " %");
-							cummulativeValue = cummulativeValue + averageForestAreaForYear;
-							yearValueHashMap.put(year, averageForestAreaForYear);
+							System.out.println("Govt Expenditure On Education Percentage Of GDP for : " + year + " is " + govtExpenditureOnEducationPercentageOfGDP+ " %");
+							cummulativeValue = cummulativeValue + govtExpenditureOnEducationPercentageOfGDP;
+							yearValueHashMap.put(year, govtExpenditureOnEducationPercentageOfGDP);
 	}
 		average = cummulativeValue/(Double.parseDouble(yearEnd) - Double.parseDouble(yearStart) + 1);
 	System.out.println("Average forest Area percentage over the years is "+ average+ " %");
@@ -60,8 +62,8 @@ public class AverageForestArea extends SuperClassGetData {
 	}
 
 
-//	public static void main(String[] args) {
-//		new AverageForestArea("Canada");
-//	}
+	public static void main(String[] args) {
+		new AverageGovtExpenditureOnEducationPercentageOfGDP("Canada");
+	}
 
 }

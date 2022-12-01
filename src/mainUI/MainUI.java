@@ -20,8 +20,10 @@ import javax.swing.JPanel;
 
 import analyses.DropdownMenuAnalysesAction;
 import countries.DropDownMenuCountriesAction;
+import renderingResults.RenderingResultAction;
 import viewers.OnClickViewersActionAdd;
 import viewers.OnClickViewersActionRemove;
+import viewers.newChartPanel;
 import years.YearFromAction;
 import years.YearToAction;
 
@@ -136,6 +138,7 @@ public class MainUI extends JFrame {
 
 		// Set bottom bar
 		JButton recalculate = new JButton("Recalculate");
+		recalculate.addActionListener(new RenderingResultAction());
 
 		JLabel viewsLabel = new JLabel("Available Views: ");
 

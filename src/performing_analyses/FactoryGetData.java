@@ -1,15 +1,19 @@
-package performinganalyses;
+package performing_analyses;
 
-public class FactoryGetAnalyses {
+import mainUI.MainUI;
 
-	public SuperClassGetData FactoryGetAnalyses(String analysis) {
+public class FactoryGetData {
+
+	String country = (String)MainUI.getCountriesList().getSelectedItem();
+	
+	public SuperClassGetData getData(String analysis) {
 		if (analysis == null || analysis.isEmpty())
 			return null;
 		switch (analysis) {
-		case "Pie Chart":
-			return new AverageForestArea(analysis);
-		case "Line Chart":
-//			return new LineChart();
+		case "Average Forest Area %":
+			return new AverageForestArea(country);
+		case "Current Health Expenditure %":
+			return new CurrentHealthExpenditurePercentage(country);
 //		case "Report":
 //			return new Report();
 //		case "Bar Chart":
