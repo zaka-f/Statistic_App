@@ -1,7 +1,7 @@
 {
     "analyses": [
       {
-        "analysis": "Current Health Expenditure % change",
+        "analysis": "Current Health Expenditure %",
         "incompatible": "Pie Chart"
       },
       {
@@ -15,10 +15,6 @@
       {
         "analysis": "CO2 Emissions vs GDP Ratio",
         "incompatible": "Pie Chart"
-      },
-      {
-        "analysis": "Current Health Expenditure % change",
-        "incompatible": "Line Chart"
       }
       
     ]

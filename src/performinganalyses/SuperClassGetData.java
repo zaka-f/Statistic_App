@@ -8,6 +8,8 @@ import java.util.Scanner;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 
+import mainUI.MainUI;
+
 public class SuperClassGetData {
 	protected String setCountryCode(String country) {	
 		switch (country) {
@@ -25,6 +27,24 @@ public class SuperClassGetData {
 			throw new IllegalArgumentException("Unknown analysis " + country);
 		}	
     }
+	protected String setURL(String country, String startYear, String endYear, String analisCode) {
+		String urlString = String.format(
+				"http://api.worldbank.org/v2/country/%s/indicator/%s?date=%s:%s&format=json", country,
+				analisCode, startYear, endYear);
+
+		return urlString;
+	}
+	protected String updateStartYear() {
+//		return (String) MainUI.getFromList().getSelectedItem();
+		return "2000";	
+	}
+	protected String updateEndYear() {
+//		return (String) MainUI.getToList().getSelectedItem();
+		return "2002";	
+	}
+
+
+
 	protected JsonArray retreiveData(String urlString) {
 		try {
 			URL url = new URL(urlString);

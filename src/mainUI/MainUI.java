@@ -155,7 +155,7 @@ public class MainUI extends JFrame {
 		JLabel methodLabel = new JLabel("        Choose analysis method: ");
 
 		Vector<String> methodsNames = new Vector<String>();
-		methodsNames.add("Current Health Expenditure % change");
+		methodsNames.add("Current Health Expenditure %");
 		methodsNames.add("Govt Expenditure on Education vs Health Expenditure % change");
 		methodsNames.add("CO2 Emissions vs Energy Use vs PM 2.5 Air Pollution(MEA) % change");
 		methodsNames.add("CO2 Emissions vs GDP Ratio");

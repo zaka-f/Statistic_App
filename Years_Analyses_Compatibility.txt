@@ -1,7 +1,7 @@
 {
     "analysesXyears": [
       {
-        "analyses": "Current Health Expenditure % change",
+        "analyses": "Current Health Expenditure %",
         "year": "2010"
       },
       {
