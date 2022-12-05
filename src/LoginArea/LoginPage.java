@@ -22,6 +22,15 @@ public class LoginPage extends JFrame {
 	private static JPasswordField password;
 	private static JPanel panel;
 	private static JLabel pd, un;
+	actionButtonLogin actionButton;
+
+	public actionButtonLogin getActionButton() {
+		return actionButton;
+	}
+
+	public static JButton getButton() {
+		return button;
+	}
 
 	// getter methods
 	public static JTextField getUsername() {
@@ -80,13 +89,14 @@ public class LoginPage extends JFrame {
 		// set the position of the button
 		button.setBounds(100, 115, 80, 25);
 		panel.add(button);
-		button.addActionListener(new actionButtonLogin());
+		button.addActionListener(actionButton = new actionButtonLogin());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// setting the panel in the frame
 		add(panel);
 		setTitle("Login Page");
 		setSize(300, 200);
+		setLocation(400,300);
 		setVisible(true);
 
 	}
