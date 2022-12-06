@@ -9,12 +9,18 @@ import mainUI.MainUILuncher;
 
 public class DropDownMenuCountriesAction implements ActionListener {
 
+	boolean fetchable;
+	
+	public boolean isFetchable() {
+		return fetchable;
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		ProxyCountryFetchableChecker checker = new ProxyCountryFetchableChecker(
 				String.valueOf(MainUI.getCountriesList().getSelectedItem()));
-		boolean fetchable = checker.isFetchable();
+		fetchable = checker.isFetchable();
 
 		// makes a decision depending on if the country's data is fetchable
 		if (fetchable) {

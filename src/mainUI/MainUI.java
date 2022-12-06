@@ -45,6 +45,12 @@ public class MainUI extends JFrame {
 	private static JComboBox<String> viewsList;
 
 	private static JPanel center;
+	
+	private static DropDownMenuCountriesAction coutryAction;
+
+	public static DropDownMenuCountriesAction getCoutryAction() {
+		return coutryAction;
+	}
 
 	// Getter and Setter methods.
 	public static JPanel getCenter() {
@@ -117,7 +123,7 @@ public class MainUI extends JFrame {
 		countriesNames.add("Brazil");
 		countriesNames.sort(null);
 		countriesList = new JComboBox<String>(countriesNames);
-		countriesList.addActionListener(new DropDownMenuCountriesAction());
+		countriesList.addActionListener(this.coutryAction = new DropDownMenuCountriesAction());
 
 		JLabel from = new JLabel("From");
 		JLabel to = new JLabel("To");

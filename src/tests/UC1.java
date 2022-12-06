@@ -1,16 +1,10 @@
 package tests;
 
 import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.fail;
-
 import org.junit.Test;
 
 import loginArea.LoginPage;
 import loginArea.UILauncher;
-import loginArea.actionButtonLogin;
-import mainUI.MainUI;
-import viewers.newChartPanel;
 
 public class UC1 {
 

@@ -22,7 +22,7 @@ public class LoginPage extends JFrame {
 	private static JPasswordField password;
 	private static JPanel panel;
 	private static JLabel pd, un;
-	actionButtonLogin actionButton;
+	private static actionButtonLogin actionButton;
 
 	public actionButtonLogin getActionButton() {
 		return actionButton;
