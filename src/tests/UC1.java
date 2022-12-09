@@ -17,9 +17,9 @@ public class UC1 {
 
 		UILauncher.main(null);
 		LoginPage loginPage = UILauncher.getnLoginPage();
-		loginPage.getPassword().setText("1a");
-		loginPage.getUsername().setText("zakaria");
-		loginPage.getButton().doClick();
+		LoginPage.getPassword().setText("1a");
+		LoginPage.getUsername().setText("zakaria");
+		LoginPage.getButton().doClick();
 		
 		boolean isTrue = loginPage.getActionButton().isAccess();
 		
@@ -32,9 +32,9 @@ public class UC1 {
 
 		UILauncher.main(null);
 		LoginPage loginPage = UILauncher.getnLoginPage();
-		loginPage.getPassword().setText("wrong");
-		loginPage.getUsername().setText("zakaria");
-		loginPage.getButton().doClick();
+		LoginPage.getPassword().setText("wrong");
+		LoginPage.getUsername().setText("zakaria");
+		LoginPage.getButton().doClick();
 		
 		boolean isTrue = loginPage.getActionButton().isAccess();
 		int correct = 0;
@@ -47,9 +47,9 @@ public class UC1 {
 
 		UILauncher.main(null);
 		LoginPage loginPage = UILauncher.getnLoginPage();
-		loginPage.getPassword().setText("1a");
-		loginPage.getUsername().setText("wrong");
-		loginPage.getButton().doClick();
+		LoginPage.getPassword().setText("1a");
+		LoginPage.getUsername().setText("wrong");
+		LoginPage.getButton().doClick();
 		
 		boolean isTrue = loginPage.getActionButton().isAccess();
 		int correct = 0;
@@ -62,9 +62,9 @@ public class UC1 {
 
 		UILauncher.main(null);
 		LoginPage loginPage = UILauncher.getnLoginPage();
-		loginPage.getPassword().setText("wrong");
-		loginPage.getUsername().setText("wrong");
-		loginPage.getButton().doClick();
+		LoginPage.getPassword().setText("wrong");
+		LoginPage.getUsername().setText("wrong");
+		LoginPage.getButton().doClick();
 		
 		boolean isTrue = loginPage.getActionButton().isAccess();
 		int correct = 0;
@@ -77,9 +77,9 @@ public class UC1 {
 
 		UILauncher.main(null);
 		LoginPage loginPage = UILauncher.getnLoginPage();
-		loginPage.getPassword().setText("1a");
-		loginPage.getUsername().setText("jamal");
-		loginPage.getButton().doClick();
+		LoginPage.getPassword().setText("1a");
+		LoginPage.getUsername().setText("jamal");
+		LoginPage.getButton().doClick();
 		
 		boolean isTrue = loginPage.getActionButton().isAccess();
 		int correct = 0;
@@ -92,9 +92,9 @@ public class UC1 {
 
 		UILauncher.main(null);
 		LoginPage loginPage = UILauncher.getnLoginPage();
-		loginPage.getPassword().setText("");
-		loginPage.getUsername().setText("");
-		loginPage.getButton().doClick();
+		LoginPage.getPassword().setText("");
+		LoginPage.getUsername().setText("");
+		LoginPage.getButton().doClick();
 		
 		boolean isTrue = loginPage.getActionButton().isAccess();
 		int correct = 0;
@@ -107,9 +107,9 @@ public class UC1 {
 
 		UILauncher.main(null);
 		LoginPage loginPage = UILauncher.getnLoginPage();
-		loginPage.getPassword().setText("");
-		loginPage.getUsername().setText("zakaria");
-		loginPage.getButton().doClick();
+		LoginPage.getPassword().setText("");
+		LoginPage.getUsername().setText("zakaria");
+		LoginPage.getButton().doClick();
 		
 		boolean isTrue = loginPage.getActionButton().isAccess();
 		int correct = 0;
@@ -122,9 +122,9 @@ public class UC1 {
 
 		UILauncher.main(null);
 		LoginPage loginPage = UILauncher.getnLoginPage();
-		loginPage.getPassword().setText("1a");
-		loginPage.getUsername().setText("");
-		loginPage.getButton().doClick();
+		LoginPage.getPassword().setText("1a");
+		LoginPage.getUsername().setText("");
+		LoginPage.getButton().doClick();
 		
 		boolean isTrue = loginPage.getActionButton().isAccess();
 		int correct = 0;

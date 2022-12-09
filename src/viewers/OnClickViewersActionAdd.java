@@ -10,7 +10,8 @@ import mainUI.MainUI;
 
 public class OnClickViewersActionAdd implements ActionListener {
 
-	Views views;
+	private static Views views;
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -18,7 +19,6 @@ public class OnClickViewersActionAdd implements ActionListener {
 		ViewersFactory factory = new ViewersFactory();
 		String newView = String.valueOf(MainUI.getViewsList().getSelectedItem());
 		String newMethod = String.valueOf(MainUI.getMethodsList().getSelectedItem());
-		//System.out.print(newView + "\n");
 		CompatibilityCheckerProxy checker = new CompatibilityCheckerProxy(newMethod, newView);
 		boolean access = checker.isInvalid();
 		if(access) {

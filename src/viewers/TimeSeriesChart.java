@@ -129,7 +129,5 @@ public class TimeSeriesChart  extends ViewerSuperClass  {
 		chartPanel.setBackground(Color.white);
 		chartPanel.setVisible(true);
 
-//		MainUI.getCenter().add(chartPanel);
-//		MainUI.getInstance().revalidate();
 	}
 }

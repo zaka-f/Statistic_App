@@ -31,7 +31,7 @@ import years.YearToAction;
 
 public class MainUI extends JFrame {
 
-	//Intance Variable
+	// Intance Variable
 	private static MainUI instance;
 
 	private static JComboBox<String> countriesList;
@@ -45,8 +45,40 @@ public class MainUI extends JFrame {
 	private static JComboBox<String> viewsList;
 
 	private static JPanel center;
-	
+
 	private static DropDownMenuCountriesAction coutryAction;
+
+	private static OnClickViewersActionAdd onClickViewersActionAdd;
+
+	private static OnClickViewersActionRemove onClickViewersActionRemove;
+	
+	private static JButton addView;
+	
+	private static JButton removeView;
+
+	public static JButton getAddView() {
+		return addView;
+	}
+
+	public static JButton getRemoveView() {
+		return removeView;
+	}
+
+	public static void setOnClickViewersActionAdd(OnClickViewersActionAdd onClickViewersActionAdd) {
+		MainUI.onClickViewersActionAdd = onClickViewersActionAdd;
+	}
+
+	public static void setOnClickViewersActionRemove(OnClickViewersActionRemove onClickViewersActionRemove) {
+		MainUI.onClickViewersActionRemove = onClickViewersActionRemove;
+	}
+
+	public static OnClickViewersActionAdd getOnClickViewersActionAdd() {
+		return onClickViewersActionAdd;
+	}
+
+	public static OnClickViewersActionRemove getOnClickViewersActionRemove() {
+		return onClickViewersActionRemove;
+	}
 
 	public static DropDownMenuCountriesAction getCoutryAction() {
 		return coutryAction;
@@ -160,10 +192,10 @@ public class MainUI extends JFrame {
 		viewsNames.add("Report");
 		viewsNames.add("Time Series");
 		viewsList = new JComboBox<String>(viewsNames);
-		JButton addView = new JButton("+");
-		addView.addActionListener(new OnClickViewersActionAdd());
-		JButton removeView = new JButton("-");
-		removeView.addActionListener(new OnClickViewersActionRemove());
+		addView = new JButton("+");
+		addView.addActionListener(onClickViewersActionAdd = new OnClickViewersActionAdd());
+		removeView = new JButton("-");
+		removeView.addActionListener(onClickViewersActionRemove = new OnClickViewersActionRemove());
 
 		JLabel methodLabel = new JLabel("        Choose analysis method: ");
 

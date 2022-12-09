@@ -30,22 +30,3 @@ public class OnClickViewersActionRemove<T extends JComponent> implements ActionL
 	}
 }
 
-//	@Override
-//	public void actionPerformed(ActionEvent e) {
-//		
-//        String removedView = String.valueOf(MainUI.getViewsList().getSelectedItem());
-//        
-//        System.out.print(Views.getInstance().getViews().size()+"\n");
-//        
-//        for (int x = Views.getInstance().getViews().size()-1; x>=0; x--) {
-//        	
-//        	if((Views.getInstance().getViews().get(x)).getType().equals(removedView)) {
-//                Views.getInstance().getViews().remove(Views.getInstance().getViews().get(x));
-//                System.out.print(Views.getInstance().getViews().size()+"\n");
-//                break;
-//    	}
-//         	
-//        }
-//        }
-
-//}

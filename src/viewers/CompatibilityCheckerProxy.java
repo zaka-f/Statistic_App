@@ -32,7 +32,6 @@ public class CompatibilityCheckerProxy implements AnalysisCompatibilityDataRetri
 		if(comboArrayList.size() > 0) {
 			for(int x = 0; x < comboArrayList.size()-1; x++) {
 				if(comboArrayList.get(x).equals(analyses) && comboArrayList.get(x + 1).equals(graph)) {
-					System.out.println(comboArrayList.get(x));
 					return true;
 				}
 			}
