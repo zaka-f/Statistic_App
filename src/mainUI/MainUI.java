@@ -55,6 +55,12 @@ public class MainUI extends JFrame {
 	private static JButton addView;
 	
 	private static JButton removeView;
+	
+	private static ActionButtonRecalculate actionButtonRecalculate;
+
+	public static ActionButtonRecalculate getActionButtonRecalculate() {
+		return actionButtonRecalculate;
+	}
 
 	public static JButton getAddView() {
 		return addView;
@@ -180,7 +186,7 @@ public class MainUI extends JFrame {
 
 		// Set bottom bar
 		JButton recalculate = new JButton("Recalculate");
-		recalculate.addActionListener(new ActionButtonRecalculate());
+		recalculate.addActionListener(actionButtonRecalculate = new ActionButtonRecalculate());
 
 		JLabel viewsLabel = new JLabel("Available Views: ");
 

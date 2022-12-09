@@ -44,6 +44,10 @@ public class SuperClassGetData {
 		return (String) MainUI.getFromList().getSelectedItem();
 	}
 	
+	public String getResult() {
+		return null;
+	}
+	
 	//returns the end year selected
 	protected String updateEndYear() {
 		return (String) MainUI.getToList().getSelectedItem();

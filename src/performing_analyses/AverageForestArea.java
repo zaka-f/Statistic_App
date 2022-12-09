@@ -14,6 +14,12 @@ public class AverageForestArea extends SuperClassGetData {
 	private HashMap<Integer, Double> yearValueHashMap;
 	private double cummulativeValue;
 	private double average;
+	private String result = "";
+
+	@Override
+	public String getResult() {
+		return result;
+	}
 
 	AverageForestArea(String country) {
 		this.country = country;
@@ -24,9 +30,10 @@ public class AverageForestArea extends SuperClassGetData {
 		this.jsonArray = retreiveData(urlString);
 		yearValueHashMap = new HashMap<Integer, Double>();
 		
-		System.out.println();
-		System.out.println("Average Forest Area %");
-		System.out.println();
+	
+		result = result + "\nAverage Forest Area %\n\n";
+
+				
 		
 		processData();
 	}
@@ -51,12 +58,13 @@ public class AverageForestArea extends SuperClassGetData {
 								forestAreaForYear = jsonArray.get(1).getAsJsonArray().get(i).getAsJsonObject().get("value")
 										.getAsDouble();
 
-							System.out.println("Forest area for : " + year + " is " + forestAreaForYear+ " %");
+							result = result + ("Forest area for : " + year + " is " + forestAreaForYear+ " %\n");
 							cummulativeValue = cummulativeValue + forestAreaForYear;
 							yearValueHashMap.put(year, forestAreaForYear);
 	}
 		average = cummulativeValue/(Double.parseDouble(yearEnd) - Double.parseDouble(yearStart) + 1);
-	System.out.println("Average forest Area percentage over the years is "+ average+ " %");
+		result = result + ("Average forest Area percentage over the years is "+ average+ " %\n");
+		System.out.println(result);
 		
 	}
 
