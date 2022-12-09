@@ -123,6 +123,7 @@ public class UC5 {
 		assertTrue(correct);
 	}
 	
+	@SuppressWarnings("static-access")
 	@Test
 	public void UC5test5ValidAndInvalidInput() {
 
@@ -148,6 +149,41 @@ public class UC5 {
 		MainUI.getInstance().getViewsList().setSelectedIndex(0);// Scatter Chart
 		MainUI.getInstance().getAddView().doClick();	
 		correct = (correct && Views.getInstance().getViews().size() == 2);
+		
+		assertTrue(correct);
+	}
+
+	@SuppressWarnings("static-access")
+	@Test
+	public void UC5test6DifferentAdd() {
+
+		MainUILuncher.main(null);
+		while (Views.getInstance().getViews().size() != 0) {
+			for(int x=0; x<6; x++) {
+				MainUI.getInstance().getViewsList().setSelectedIndex(x);
+				MainUI.getInstance().getRemoveView().doClick();
+			}
+		}
+		boolean correct = Views.getInstance().getViews().size() == 0;
+		
+		MainUI.getInstance().getCountriesList().setSelectedIndex(1);// Canada
+		MainUI.getInstance().getFromList().setSelectedIndex(2);// 2019
+		MainUI.getInstance().getToList().setSelectedIndex(1);// 2020
+		MainUI.getInstance().getMethodsList().setSelectedIndex(4);
+		MainUI.getInstance().getViewsList().setSelectedIndex(0);// Pie Chart
+		correct = correct && MainUI.getInstance().getViewsList().getSelectedItem().toString().equals("Pie Chart");
+        MainUI.getInstance().getAddView().doClick();
+        MainUI.getInstance().getAddView().doClick();
+		correct = (correct && Views.getInstance().getViews().size() == 2);	
+		MainUI.getInstance().getViewsList().setSelectedIndex(5);
+	    MainUI.getInstance().getAddView().doClick();
+	    correct = (correct && Views.getInstance().getViews().size() == 3);	
+	    MainUI.getInstance().getViewsList().setSelectedIndex(4);
+	    MainUI.getInstance().getAddView().doClick();
+	    correct = (correct && Views.getInstance().getViews().size() == 4);
+	    MainUI.getInstance().getViewsList().setSelectedIndex(2);
+	    MainUI.getInstance().getAddView().doClick();
+	    correct = (correct && Views.getInstance().getViews().size() == 5);	
 		
 		assertTrue(correct);
 	}

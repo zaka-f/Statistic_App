@@ -151,9 +151,8 @@ UILauncher uiLauncher = new UILauncher();
 	public void uC2test1() {
 
 		MainUILuncher.main(null);
-		MainUI mainUI = MainUI.getInstance();
-		MainUI.getCountriesList().setSelectedIndex(0);//Brazil
-		boolean correct = MainUI.getCoutryAction().isFetchable();
+		MainUI.getInstance().getCountriesList().setSelectedIndex(0);//Brazil
+		boolean correct = MainUI.getInstance().getCoutryAction().isFetchable();
 		assertTrue(correct);
 	}
 	
@@ -162,9 +161,8 @@ UILauncher uiLauncher = new UILauncher();
 	public void uC2test2() {
 
 		MainUILuncher.main(null);
-		MainUI mainUI = MainUI.getInstance();
-		MainUI.getCountriesList().setSelectedIndex(1);//Cnada
-		boolean correct = MainUI.getCoutryAction().isFetchable();
+		MainUI.getInstance().getCountriesList().setSelectedIndex(1);//Cnada
+		boolean correct = MainUI.getInstance().getCoutryAction().isFetchable();
 		assertTrue(correct);
 	}
 	
@@ -173,9 +171,8 @@ UILauncher uiLauncher = new UILauncher();
 	public void uC2test3() {
 
 		MainUILuncher.main(null);
-		MainUI mainUI = MainUI.getInstance();
-		MainUI.getCountriesList().setSelectedIndex(2);//China
-		boolean correct = MainUI.getCoutryAction().isFetchable();
+		MainUI.getInstance().getCountriesList().setSelectedIndex(2);//China
+		boolean correct = MainUI.getInstance().getCoutryAction().isFetchable();
 		assertTrue(!correct);
 	}
 	
@@ -184,9 +181,8 @@ UILauncher uiLauncher = new UILauncher();
 	public void uC2test4() {
 
 		MainUILuncher.main(null);
-		MainUI mainUI = MainUI.getInstance();
-		MainUI.getCountriesList().setSelectedIndex(3);//France
-		boolean correct = MainUI.getCoutryAction().isFetchable();
+		MainUI.getInstance().getCountriesList().setSelectedIndex(3);//France
+		boolean correct = MainUI.getInstance().getCoutryAction().isFetchable();
 		assertTrue(correct);
 	}
 	
@@ -195,9 +191,8 @@ UILauncher uiLauncher = new UILauncher();
 	public void uC2test5() {
 
 		MainUILuncher.main(null);
-		MainUI mainUI = MainUI.getInstance();
-		MainUI.getCountriesList().setSelectedIndex(4);//USA
-		boolean correct = MainUI.getCoutryAction().isFetchable();
+		MainUI.getInstance().getCountriesList().setSelectedIndex(4);//USA
+		boolean correct = MainUI.getInstance().getCoutryAction().isFetchable();
 		assertTrue(!correct);
 	}
 
@@ -210,14 +205,14 @@ UILauncher uiLauncher = new UILauncher();
 	public void test1ValidInput() {
 
 		MainUILuncher.main(null);
-		MainUI.getInstance();
-		MainUI.getFromList().setSelectedIndex(1);// 2020
-		MainUI.getInstance();
-		MainUI.getToList().setSelectedIndex(0);// 2021
-		MainUI.getInstance();
-		boolean correct = MainUI.getFromList().getSelectedItem().toString().equals("2020");
-		MainUI.getInstance();
-		correct = correct && MainUI.getToList().getSelectedItem().toString().equals("2021");
+		
+		MainUI.getInstance().getFromList().setSelectedIndex(1);// 2020
+		
+		MainUI.getInstance().getToList().setSelectedIndex(0);// 2021
+		
+		boolean correct = MainUI.getInstance().getFromList().getSelectedItem().toString().equals("2020");
+		
+		correct = correct && MainUI.getInstance().getToList().getSelectedItem().toString().equals("2021");
 		correct = (correct && YearsDecider.getInstance().isYearAvailable()
 				&& YearsDecider.getInstance().isYearOrderCorrect());
 		assertTrue(correct);
@@ -228,14 +223,14 @@ UILauncher uiLauncher = new UILauncher();
 	public void test2IncorrectYearsOrder() {
 
 		MainUILuncher.main(null);
-		MainUI.getInstance();
-		MainUI.getFromList().setSelectedIndex(0);// 2021
-		MainUI.getInstance();
-		MainUI.getToList().setSelectedIndex(1);// 2020
-		MainUI.getInstance();
-		boolean correct = MainUI.getFromList().getSelectedItem().toString().equals("2021");
-		MainUI.getInstance();
-		correct = correct && MainUI.getToList().getSelectedItem().toString().equals("2020");
+		
+		MainUI.getInstance().getFromList().setSelectedIndex(0);// 2021
+		
+		MainUI.getInstance().getToList().setSelectedIndex(1);// 2020
+		
+		boolean correct = MainUI.getInstance().getFromList().getSelectedItem().toString().equals("2021");
+		
+		correct = correct && MainUI.getInstance().getToList().getSelectedItem().toString().equals("2020");
 		correct = (correct && !YearsDecider.getInstance().isYearOrderCorrect());
 		assertTrue(correct);
 	}
@@ -245,14 +240,14 @@ UILauncher uiLauncher = new UILauncher();
 	public void test3CorrectYearsOrder() {
 
 		MainUILuncher.main(null);
-		MainUI.getInstance();
-		MainUI.getFromList().setSelectedIndex(1);// 2020
-		MainUI.getInstance();
-		MainUI.getToList().setSelectedIndex(0);// 2021
-		MainUI.getInstance();
-		boolean correct = MainUI.getFromList().getSelectedItem().toString().equals("2020");
-		MainUI.getInstance();
-		correct = correct && MainUI.getToList().getSelectedItem().toString().equals("2021");
+		
+		MainUI.getInstance().getFromList().setSelectedIndex(1);// 2020
+		
+		MainUI.getInstance().getToList().setSelectedIndex(0);// 2021
+		
+		boolean correct = MainUI.getInstance().getFromList().getSelectedItem().toString().equals("2020");
+		
+		correct = correct && MainUI.getInstance().getToList().getSelectedItem().toString().equals("2021");
 		correct = (correct && YearsDecider.getInstance().isYearOrderCorrect());
 		assertTrue(correct);
 	}
@@ -262,14 +257,14 @@ UILauncher uiLauncher = new UILauncher();
 	public void test4YearsNotAvailable() {
 
 		MainUILuncher.main(null);
-		MainUI.getInstance();
-		MainUI.getFromList().setSelectedIndex(11);// 2010
-		MainUI.getInstance();
-		MainUI.getToList().setSelectedIndex(0);// 2021
-		MainUI.getInstance();
-		boolean correct = MainUI.getFromList().getSelectedItem().toString().equals("2010");
-		MainUI.getInstance();
-		correct = correct && MainUI.getToList().getSelectedItem().toString().equals("2021");
+		
+		MainUI.getInstance().getFromList().setSelectedIndex(11);// 2010
+		
+		MainUI.getInstance().getToList().setSelectedIndex(0);// 2021
+		
+		boolean correct = MainUI.getInstance().getFromList().getSelectedItem().toString().equals("2010");
+		
+		correct = correct && MainUI.getInstance().getToList().getSelectedItem().toString().equals("2021");
 		correct = (correct && !YearsDecider.getInstance().isYearAvailable());
 		assertTrue(correct);
 	}
@@ -279,18 +274,18 @@ UILauncher uiLauncher = new UILauncher();
 	public void test5YearsAvailable() {
 
 		MainUILuncher.main(null);
-		MainUI.getInstance();
-		MainUI.getMethodsList().setSelectedIndex(0);
-		MainUI.getInstance();
-		MainUI.getCountriesList().setSelectedIndex(0);
-		MainUI.getInstance();
-		MainUI.getFromList().setSelectedIndex(9);// 2012
-		MainUI.getInstance();
-		MainUI.getToList().setSelectedIndex(0);// 2021
-		MainUI.getInstance();
-		boolean correct = MainUI.getFromList().getSelectedItem().toString().equals("2011");
-		MainUI.getInstance();
-		correct = correct && MainUI.getToList().getSelectedItem().toString().equals("2021");
+		
+		MainUI.getInstance().getMethodsList().setSelectedIndex(0);
+		
+		MainUI.getInstance().getCountriesList().setSelectedIndex(0);
+		
+		MainUI.getInstance().getFromList().setSelectedIndex(9);// 2012
+		
+		MainUI.getInstance().getToList().setSelectedIndex(0);// 2021
+		
+		boolean correct = MainUI.getInstance().getFromList().getSelectedItem().toString().equals("2011");
+		
+		correct = correct && MainUI.getInstance().getToList().getSelectedItem().toString().equals("2021");
 		correct = (correct && YearsDecider.getInstance().isYearAvailable());
 		assertTrue(!correct);
 	}
@@ -300,18 +295,18 @@ UILauncher uiLauncher = new UILauncher();
 	public void test6YearsNotAvailableAndWrongOrder() {
 
 		MainUILuncher.main(null);
-		MainUI.getInstance();
-		MainUI.getFromList().setSelectedIndex(0);// 2021
-		MainUI.getInstance();
-		MainUI.getToList().setSelectedIndex(11);// 2010
-		MainUI.getInstance();
-		boolean correct = MainUI.getFromList().getSelectedItem().toString().equals("2021");
-		MainUI.getInstance();
-		System.out.println(MainUI.getFromList().getSelectedItem().toString());
-		MainUI.getInstance();
-		correct = correct && MainUI.getToList().getSelectedItem().toString().equals("2010");
-		MainUI.getInstance();
-		System.out.println(MainUI.getToList().getSelectedItem().toString());
+		
+		MainUI.getInstance().getFromList().setSelectedIndex(0);// 2021
+		
+		MainUI.getInstance().getToList().setSelectedIndex(11);// 2010
+		
+		boolean correct = MainUI.getInstance().getFromList().getSelectedItem().toString().equals("2021");
+		
+		System.out.println(MainUI.getInstance().getFromList().getSelectedItem().toString());
+		
+		correct = correct && MainUI.getInstance().getToList().getSelectedItem().toString().equals("2010");
+		
+		System.out.println(MainUI.getInstance().getToList().getSelectedItem().toString());
 		correct = (correct && YearsDecider.getInstance().isYearAvailable()
 				&& YearsDecider.getInstance().isYearOrderCorrect());
 		assertTrue(!correct);
@@ -326,30 +321,30 @@ UILauncher uiLauncher = new UILauncher();
 	public void UC5test1ValidInput() {
 
 		while (Views.getInstance().getViews().size() > 0) {
-			MainUI.getInstance();
-			MainUI.getRemoveView().doClick();
+			
+			MainUI.getInstance().getRemoveView().doClick();
 
 		}
 
 		boolean correct = Views.getInstance().getViews().size() == 0;
 
 		MainUILuncher.main(null);
-		MainUI.getInstance();
-		MainUI.getCountriesList().setSelectedIndex(0);// Brazil
-		MainUI.getInstance();
-		MainUI.getFromList().setSelectedIndex(1);// 2020
-		MainUI.getInstance();
-		MainUI.getToList().setSelectedIndex(0);// 2021
-		MainUI.getInstance();
-		MainUI.getMethodsList().setSelectedIndex(1);// Govt Expenditure on Education vs Health Expenditure
-		MainUI.getInstance();
-		MainUI.getViewsList().setSelectedIndex(1);// Line Chart
+		
+		MainUI.getInstance().getCountriesList().setSelectedIndex(0);// Brazil
+		
+		MainUI.getInstance().getFromList().setSelectedIndex(1);// 2020
+		
+		MainUI.getInstance().getToList().setSelectedIndex(0);// 2021
+		
+		MainUI.getInstance().getMethodsList().setSelectedIndex(1);// Govt Expenditure on Education vs Health Expenditure
+		
+		MainUI.getInstance().getViewsList().setSelectedIndex(1);// Line Chart
 
-		MainUI.getInstance();
-		correct = correct && MainUI.getViewsList().getSelectedItem().toString().equals("Line Chart");
+		
+		correct = correct && MainUI.getInstance().getViewsList().getSelectedItem().toString().equals("Line Chart");
 
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();
+		
+		MainUI.getInstance().getAddView().doClick();
 
 		correct = (correct && Views.getInstance().getViews().size() == 1);
 		assertTrue(correct);
@@ -361,32 +356,32 @@ UILauncher uiLauncher = new UILauncher();
 
 		while (Views.getInstance().getViews().size() != 0) {
 			for(int x=0; x<6; x++) {
-				MainUI.getInstance();
-				MainUI.getViewsList().setSelectedIndex(x);
-				MainUI.getInstance();
-				MainUI.getRemoveView().doClick();
+				
+				MainUI.getInstance().getViewsList().setSelectedIndex(x);
+				
+				MainUI.getInstance().getRemoveView().doClick();
 			}
 		}
 
 		boolean correct = Views.getInstance().getViews().size() == 0;
 
 		MainUILuncher.main(null);
-		MainUI.getInstance();
-		MainUI.getCountriesList().setSelectedIndex(0);// Brazil
-		MainUI.getInstance();
-		MainUI.getFromList().setSelectedIndex(1);// 2020
-		MainUI.getInstance();
-		MainUI.getToList().setSelectedIndex(0);// 2021
-		MainUI.getInstance();
-		MainUI.getMethodsList().setSelectedIndex(1);// Govt Expenditure on Education vs Health Expenditure
-		MainUI.getInstance();
-		MainUI.getViewsList().setSelectedIndex(0);// Pie Chart
+		
+		MainUI.getInstance().getCountriesList().setSelectedIndex(0);// Brazil
+		
+		MainUI.getInstance().getFromList().setSelectedIndex(1);// 2020
+		
+		MainUI.getInstance().getToList().setSelectedIndex(0);// 2021
+		
+		MainUI.getInstance().getMethodsList().setSelectedIndex(1);// Govt Expenditure on Education vs Health Expenditure
+		
+		MainUI.getInstance().getViewsList().setSelectedIndex(0);// Pie Chart
 
-		MainUI.getInstance();
-		correct = correct && MainUI.getViewsList().getSelectedItem().toString().equals("Pie Chart");
+		
+		correct = correct && MainUI.getInstance().getViewsList().getSelectedItem().toString().equals("Pie Chart");
 
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();
+		
+		MainUI.getInstance().getAddView().doClick();
 
 		correct = (correct && Views.getInstance().getViews().size() == 0);
 		assertTrue(correct);
@@ -399,31 +394,31 @@ UILauncher uiLauncher = new UILauncher();
 		MainUILuncher.main(null);
 		while (Views.getInstance().getViews().size() != 0) {
 			for(int x=0; x<6; x++) {
-				MainUI.getInstance();
-				MainUI.getViewsList().setSelectedIndex(x);
-				MainUI.getInstance();
-				MainUI.getRemoveView().doClick();
+				
+				MainUI.getInstance().getViewsList().setSelectedIndex(x);
+				
+				MainUI.getInstance().getRemoveView().doClick();
 			}
 		}
 		boolean correct = Views.getInstance().getViews().size() == 0;
 		
-		MainUI.getInstance();
-		MainUI.getCountriesList().setSelectedIndex(1);// Canada
-		MainUI.getInstance();
-		MainUI.getFromList().setSelectedIndex(2);// 2019
-		MainUI.getInstance();
-		MainUI.getToList().setSelectedIndex(1);// 2020
-		MainUI.getInstance();
-		MainUI.getMethodsList().setSelectedIndex(2);// CO2 Emissions vs Energy Use vs PM 2.5 Air
-		MainUI.getInstance();
-		MainUI.getViewsList().setSelectedIndex(3);// Scatter Chart
+		
+		MainUI.getInstance().getCountriesList().setSelectedIndex(1);// Canada
+		
+		MainUI.getInstance().getFromList().setSelectedIndex(2);// 2019
+		
+		MainUI.getInstance().getToList().setSelectedIndex(1);// 2020
+		
+		MainUI.getInstance().getMethodsList().setSelectedIndex(2);// CO2 Emissions vs Energy Use vs PM 2.5 Air
+		
+		MainUI.getInstance().getViewsList().setSelectedIndex(3);// Scatter Chart
 
-		MainUI.getInstance();
-		correct = correct && MainUI.getViewsList().getSelectedItem().toString().equals("Scatter Chart");
-        MainUI.getInstance();
-		MainUI.getAddView().doClick();
-        MainUI.getInstance();
-		MainUI.getAddView().doClick();
+		
+		correct = correct && MainUI.getInstance().getViewsList().getSelectedItem().toString().equals("Scatter Chart");
+        
+		MainUI.getInstance().getAddView().doClick();
+        
+		MainUI.getInstance().getAddView().doClick();
 
 		correct = (correct && Views.getInstance().getViews().size() == 2);
 
@@ -436,34 +431,34 @@ UILauncher uiLauncher = new UILauncher();
 		//Removing any potential existing view
 		while (Views.getInstance().getViews().size() != 0) {
 			for(int x=0; x<6; x++) {
-				MainUI.getInstance();
-				MainUI.getViewsList().setSelectedIndex(x);
-				MainUI.getInstance();
-				MainUI.getRemoveView().doClick();
+				
+				MainUI.getInstance().getViewsList().setSelectedIndex(x);
+				
+				MainUI.getInstance().getRemoveView().doClick();
 			}
 		}
 
 		boolean correct = Views.getInstance().getViews().size() == 0;
 
 		MainUILuncher.main(null);
-		MainUI.getInstance();
-		MainUI.getCountriesList().setSelectedIndex(0);// Brazil
-		MainUI.getInstance();
-		MainUI.getFromList().setSelectedIndex(1);// 2020
-		MainUI.getInstance();
-		MainUI.getToList().setSelectedIndex(0);// 2021
-		MainUI.getInstance();
-		MainUI.getMethodsList().setSelectedIndex(1);// Govt Expenditure on Education vs Health Expenditure
-		MainUI.getInstance();
-		MainUI.getViewsList().setSelectedIndex(0);// Pie Chart
+		
+		MainUI.getInstance().getCountriesList().setSelectedIndex(0);// Brazil
+		
+		MainUI.getInstance().getFromList().setSelectedIndex(1);// 2020
+		
+		MainUI.getInstance().getToList().setSelectedIndex(0);// 2021
+		
+		MainUI.getInstance().getMethodsList().setSelectedIndex(1);// Govt Expenditure on Education vs Health Expenditure
+		
+		MainUI.getInstance().getViewsList().setSelectedIndex(0);// Pie Chart
 
-		MainUI.getInstance();
-		correct = correct && MainUI.getViewsList().getSelectedItem().toString().equals("Pie Chart");
+		
+		correct = correct && MainUI.getInstance().getViewsList().getSelectedItem().toString().equals("Pie Chart");
 
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();
+		
+		MainUI.getInstance().getAddView().doClick();
+		
+		MainUI.getInstance().getAddView().doClick();
 
 		correct = (correct && Views.getInstance().getViews().size() == 0);
 		assertTrue(correct);
@@ -475,37 +470,72 @@ UILauncher uiLauncher = new UILauncher();
 		//Removing any potential existing view
 		while (Views.getInstance().getViews().size() != 0) {
 			for(int x=0; x<6; x++) {
-				MainUI.getInstance();
-				MainUI.getViewsList().setSelectedIndex(x);
-				MainUI.getInstance();
-				MainUI.getRemoveView().doClick();
+				
+				MainUI.getInstance().getViewsList().setSelectedIndex(x);
+				
+				MainUI.getInstance().getRemoveView().doClick();
 			}
 		}
 		boolean correct = Views.getInstance().getViews().size() == 0;
 		
-		MainUI.getInstance();
-		MainUI.getCountriesList().setSelectedIndex(1);// Canada
-		MainUI.getInstance();
-		MainUI.getFromList().setSelectedIndex(2);// 2019
-		MainUI.getInstance();
-		MainUI.getToList().setSelectedIndex(1);// 2020
-		MainUI.getInstance();
-		MainUI.getMethodsList().setSelectedIndex(2);// CO2 Emissions vs Energy Use vs PM 2.5 Air
-																	MainUI.getInstance();
+		
+		MainUI.getInstance().getCountriesList().setSelectedIndex(1);// Canada
+		
+		MainUI.getInstance().getFromList().setSelectedIndex(2);// 2019
+		
+		MainUI.getInstance().getToList().setSelectedIndex(1);// 2020
+		
+		MainUI.getInstance().getMethodsList().setSelectedIndex(2);// CO2 Emissions vs Energy Use vs PM 2.5 Air
+																	
 		// Pollution(MEA)
-		MainUI.getViewsList().setSelectedIndex(3);// Scatter Chart
-		MainUI.getInstance();
-		correct = correct && MainUI.getViewsList().getSelectedItem().toString().equals("Scatter Chart");
-        MainUI.getInstance();
-		MainUI.getAddView().doClick();
-        MainUI.getInstance();
-		MainUI.getAddView().doClick();
+		MainUI.getInstance().getViewsList().setSelectedIndex(3);// Scatter Chart
+		
+		correct = correct && MainUI.getInstance().getViewsList().getSelectedItem().toString().equals("Scatter Chart");
+        
+		MainUI.getInstance().getAddView().doClick();
+        
+		MainUI.getInstance().getAddView().doClick();
 		correct = (correct && Views.getInstance().getViews().size() == 2);	
-		MainUI.getInstance();
-		MainUI.getViewsList().setSelectedIndex(0);// Scatter Chart
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();	
+		
+		MainUI.getInstance().getViewsList().setSelectedIndex(0);// Scatter Chart
+		
+		MainUI.getInstance().getAddView().doClick();	
 		correct = (correct && Views.getInstance().getViews().size() == 2);
+		
+		assertTrue(correct);
+	}
+	
+	@SuppressWarnings("static-access")
+	@Test
+	public void UC5test6DifferentAdd() {
+
+		MainUILuncher.main(null);
+		while (Views.getInstance().getViews().size() != 0) {
+			for(int x=0; x<6; x++) {
+				MainUI.getInstance().getViewsList().setSelectedIndex(x);
+				MainUI.getInstance().getRemoveView().doClick();
+			}
+		}
+		boolean correct = Views.getInstance().getViews().size() == 0;
+		
+		MainUI.getInstance().getCountriesList().setSelectedIndex(1);// Canada
+		MainUI.getInstance().getFromList().setSelectedIndex(2);// 2019
+		MainUI.getInstance().getToList().setSelectedIndex(1);// 2020
+		MainUI.getInstance().getMethodsList().setSelectedIndex(4);
+		MainUI.getInstance().getViewsList().setSelectedIndex(0);// Pie Chart
+		correct = correct && MainUI.getInstance().getViewsList().getSelectedItem().toString().equals("Pie Chart");
+        MainUI.getInstance().getAddView().doClick();
+        MainUI.getInstance().getAddView().doClick();
+		correct = (correct && Views.getInstance().getViews().size() == 2);	
+		MainUI.getInstance().getViewsList().setSelectedIndex(5);
+	    MainUI.getInstance().getAddView().doClick();
+	    correct = (correct && Views.getInstance().getViews().size() == 3);	
+	    MainUI.getInstance().getViewsList().setSelectedIndex(4);
+	    MainUI.getInstance().getAddView().doClick();
+	    correct = (correct && Views.getInstance().getViews().size() == 4);
+	    MainUI.getInstance().getViewsList().setSelectedIndex(2);
+	    MainUI.getInstance().getAddView().doClick();
+	    correct = (correct && Views.getInstance().getViews().size() == 5);	
 		
 		assertTrue(correct);
 	}
@@ -521,37 +551,37 @@ UILauncher uiLauncher = new UILauncher();
 		//Removing any potential existing view
 		while (Views.getInstance().getViews().size() != 0) {
 			for(int x=0; x<6; x++) {
-				MainUI.getInstance();
-				MainUI.getViewsList().setSelectedIndex(x);
-				MainUI.getInstance();
-				MainUI.getRemoveView().doClick();
+				
+				MainUI.getInstance().getViewsList().setSelectedIndex(x);
+				
+				MainUI.getInstance().getRemoveView().doClick();
 			}
 		}
 
 		boolean correct = Views.getInstance().getViews().size() == 0;
 
 		MainUILuncher.main(null);
-		MainUI.getInstance();
-		MainUI.getCountriesList().setSelectedIndex(0);// Brazil
-		MainUI.getInstance();
-		MainUI.getFromList().setSelectedIndex(1);// 2020
-		MainUI.getInstance();
-		MainUI.getToList().setSelectedIndex(0);// 2021
-		MainUI.getInstance();
-		MainUI.getMethodsList().setSelectedIndex(1);// Govt Expenditure on Education vs Health Expenditure
-		MainUI.getInstance();
-		MainUI.getViewsList().setSelectedIndex(1);// Line Chart
+		
+		MainUI.getInstance().getCountriesList().setSelectedIndex(0);// Brazil
+		
+		MainUI.getInstance().getFromList().setSelectedIndex(1);// 2020
+		
+		MainUI.getInstance().getToList().setSelectedIndex(0);// 2021
+		
+		MainUI.getInstance().getMethodsList().setSelectedIndex(1);// Govt Expenditure on Education vs Health Expenditure
+		
+		MainUI.getInstance().getViewsList().setSelectedIndex(1);// Line Chart
 
-		MainUI.getInstance();
-		correct = correct && MainUI.getViewsList().getSelectedItem().toString().equals("Line Chart");
+		
+		correct = correct && MainUI.getInstance().getViewsList().getSelectedItem().toString().equals("Line Chart");
 
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();
+		
+		MainUI.getInstance().getAddView().doClick();
 
 		correct = (correct && Views.getInstance().getViews().size() == 1);
 		
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
+		
+		MainUI.getInstance().getRemoveView().doClick();
 		
 		correct = (correct && Views.getInstance().getViews().size() == 0);
 		
@@ -566,45 +596,45 @@ UILauncher uiLauncher = new UILauncher();
 		//Removing any potential existing view
 		while (Views.getInstance().getViews().size() != 0) {
 			for(int x=0; x<6; x++) {
-				MainUI.getInstance();
-				MainUI.getViewsList().setSelectedIndex(x);
-				MainUI.getInstance();
-				MainUI.getRemoveView().doClick();
+				
+				MainUI.getInstance().getViewsList().setSelectedIndex(x);
+				
+				MainUI.getInstance().getRemoveView().doClick();
 			}
 		}
 
 		boolean correct = Views.getInstance().getViews().size() == 0;
 
 		MainUILuncher.main(null);
-		MainUI.getInstance();
-		MainUI.getCountriesList().setSelectedIndex(0);// Brazil
-		MainUI.getInstance();
-		MainUI.getFromList().setSelectedIndex(1);// 2020
-		MainUI.getInstance();
-		MainUI.getToList().setSelectedIndex(0);// 2021
-		MainUI.getInstance();
-		MainUI.getMethodsList().setSelectedIndex(1);// Govt Expenditure on Education vs Health Expenditure
-		MainUI.getInstance();
-		MainUI.getViewsList().setSelectedIndex(1);// Line Chart
+		
+		MainUI.getInstance().getCountriesList().setSelectedIndex(0);// Brazil
+		
+		MainUI.getInstance().getFromList().setSelectedIndex(1);// 2020
+		
+		MainUI.getInstance().getToList().setSelectedIndex(0);// 2021
+		
+		MainUI.getInstance().getMethodsList().setSelectedIndex(1);// Govt Expenditure on Education vs Health Expenditure
+		
+		MainUI.getInstance().getViewsList().setSelectedIndex(1);// Line Chart
 
-		MainUI.getInstance();
-		correct = correct && MainUI.getViewsList().getSelectedItem().toString().equals("Line Chart");
+		
+		correct = correct && MainUI.getInstance().getViewsList().getSelectedItem().toString().equals("Line Chart");
 
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();
+		
+		MainUI.getInstance().getAddView().doClick();
+		
+		MainUI.getInstance().getAddView().doClick();
+		
+		MainUI.getInstance().getAddView().doClick();
 
 		correct = (correct && Views.getInstance().getViews().size() == 3);
 		
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
+		
+		MainUI.getInstance().getRemoveView().doClick();
+		
+		MainUI.getInstance().getRemoveView().doClick();
+		
+		MainUI.getInstance().getRemoveView().doClick();
 		
 		correct = (correct && Views.getInstance().getViews().size() == 0);
 		
@@ -618,21 +648,21 @@ UILauncher uiLauncher = new UILauncher();
 		//Removing any potential existing view
 		while (Views.getInstance().getViews().size() != 0) {
 			for(int x=0; x<6; x++) {
-				MainUI.getInstance();
-				MainUI.getViewsList().setSelectedIndex(x);
-				MainUI.getInstance();
-				MainUI.getRemoveView().doClick();
+				
+				MainUI.getInstance().getViewsList().setSelectedIndex(x);
+				
+				MainUI.getInstance().getRemoveView().doClick();
 			}
 		}
 
 		boolean correct = Views.getInstance().getViews().size() == 0;
 		
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
+		
+		MainUI.getInstance().getRemoveView().doClick();
+		
+		MainUI.getInstance().getRemoveView().doClick();
+		
+		MainUI.getInstance().getRemoveView().doClick();
 		
 		correct = (correct && Views.getInstance().getViews().size() == 0);
 		
@@ -644,55 +674,55 @@ UILauncher uiLauncher = new UILauncher();
 	public void UC6test4RemoveDifferent() {
 
 		//Removing any potential existing view
-		while (Views.getInstance().getViews().size() > 0) {
-			MainUI.getInstance();
-			MainUI.getRemoveView().doClick();
-
+		while (Views.getInstance().getViews().size() != 0) {
+			for(int x=0; x<6; x++) {
+				MainUI.getInstance().getViewsList().setSelectedIndex(x);
+				MainUI.getInstance().getRemoveView().doClick();
+			}
 		}
-
 		boolean correct = Views.getInstance().getViews().size() == 0;
 
 		MainUILuncher.main(null);
-		MainUI.getInstance();
-		MainUI.getCountriesList().setSelectedIndex(0);// Brazil
-		MainUI.getInstance();
-		MainUI.getFromList().setSelectedIndex(1);// 2020
-		MainUI.getInstance();
-		MainUI.getToList().setSelectedIndex(0);// 2021
-		MainUI.getInstance();
-		MainUI.getMethodsList().setSelectedIndex(1);// Govt Expenditure on Education vs Health Expenditure
-		MainUI.getInstance();
-		MainUI.getViewsList().setSelectedIndex(1);// Line Chart
+		
+		MainUI.getInstance().getCountriesList().setSelectedIndex(0);// Brazil
+		
+		MainUI.getInstance().getFromList().setSelectedIndex(1);// 2020
+		
+		MainUI.getInstance().getToList().setSelectedIndex(0);// 2021
+		
+		MainUI.getInstance().getMethodsList().setSelectedIndex(1);// Govt Expenditure on Education vs Health Expenditure
+		
+		MainUI.getInstance().getViewsList().setSelectedIndex(1);// Line Chart
 
-		MainUI.getInstance();
-		correct = correct && MainUI.getViewsList().getSelectedItem().toString().equals("Line Chart");
+		
+		correct = correct && MainUI.getInstance().getViewsList().getSelectedItem().toString().equals("Line Chart");
 
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();		
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();
+		
+		MainUI.getInstance().getAddView().doClick();
+		
+		MainUI.getInstance().getAddView().doClick();		
+		
+		MainUI.getInstance().getAddView().doClick();
 
 		correct = (correct && Views.getInstance().getViews().size() == 3);
 		
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
 		
-		MainUI.getInstance();
-		MainUI.getViewsList().setSelectedIndex(1);//BarChart Chart
+		MainUI.getInstance().getRemoveView().doClick();
 		
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();
+		MainUI.getInstance().getRemoveView().doClick();
+		
+		MainUI.getInstance().getRemoveView().doClick();
+		
+		
+		MainUI.getInstance().getViewsList().setSelectedIndex(1);//BarChart Chart
+		
+		
+		MainUI.getInstance().getAddView().doClick();
 		
 		correct = (correct && Views.getInstance().getViews().size() == 1);
 		
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
+		
+		MainUI.getInstance().getRemoveView().doClick();
 		
 		correct = (correct && Views.getInstance().getViews().size() == 0);
 		
@@ -705,62 +735,62 @@ UILauncher uiLauncher = new UILauncher();
 
 		//Removing any potential existing view
 		while (Views.getInstance().getViews().size() > 0) {
-			MainUI.getInstance();
-			MainUI.getRemoveView().doClick();
+			
+			MainUI.getInstance().getRemoveView().doClick();
 
 		}
 
 		boolean correct = Views.getInstance().getViews().size() == 0;
 
 		MainUILuncher.main(null);
-		MainUI.getInstance();
-		MainUI.getCountriesList().setSelectedIndex(0);// Brazil
-		MainUI.getInstance();
-		MainUI.getFromList().setSelectedIndex(1);// 2020
-		MainUI.getInstance();
-		MainUI.getToList().setSelectedIndex(0);// 2021
-		MainUI.getInstance();
-		MainUI.getMethodsList().setSelectedIndex(1);// Govt Expenditure on Education vs Health Expenditure
-		MainUI.getInstance();
-		MainUI.getViewsList().setSelectedIndex(1);// Line Chart
+		
+		MainUI.getInstance().getCountriesList().setSelectedIndex(0);// Brazil
+		
+		MainUI.getInstance().getFromList().setSelectedIndex(1);// 2020
+		
+		MainUI.getInstance().getToList().setSelectedIndex(0);// 2021
+		
+		MainUI.getInstance().getMethodsList().setSelectedIndex(1);// Govt Expenditure on Education vs Health Expenditure
+		
+		MainUI.getInstance().getViewsList().setSelectedIndex(1);// Line Chart
 
-		MainUI.getInstance();
-		correct = correct && MainUI.getViewsList().getSelectedItem().toString().equals("Line Chart");
+		
+		correct = correct && MainUI.getInstance().getViewsList().getSelectedItem().toString().equals("Line Chart");
 
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();		
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();
+		
+		MainUI.getInstance().getAddView().doClick();
+		
+		MainUI.getInstance().getAddView().doClick();		
+		
+		MainUI.getInstance().getAddView().doClick();
 
 		correct = (correct && Views.getInstance().getViews().size() == 3);
 		
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
 		
-		MainUI.getInstance();
-		MainUI.getViewsList().setSelectedIndex(1);//BarChart Chart
+		MainUI.getInstance().getRemoveView().doClick();
 		
-		MainUI.getInstance();
-		MainUI.getAddView().doClick();
+		MainUI.getInstance().getRemoveView().doClick();
+		
+		MainUI.getInstance().getRemoveView().doClick();
+		
+		
+		MainUI.getInstance().getViewsList().setSelectedIndex(1);//BarChart Chart
+		
+		
+		MainUI.getInstance().getAddView().doClick();
 		
 		correct = (correct && Views.getInstance().getViews().size() == 1);
 		
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
+		
+		MainUI.getInstance().getRemoveView().doClick();
 		
 		correct = (correct && Views.getInstance().getViews().size() == 0);
 		
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
 		
-		MainUI.getInstance();
-		MainUI.getRemoveView().doClick();
+		MainUI.getInstance().getRemoveView().doClick();
+		
+		
+		MainUI.getInstance().getRemoveView().doClick();
 		
 		correct = (correct && Views.getInstance().getViews().size() == 0);
 		
