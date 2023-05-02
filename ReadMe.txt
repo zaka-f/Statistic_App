@@ -6,8 +6,7 @@ username/password
 zakaria/1a
 jamal/2b
 mohamed/3c
-ta1/1
-ta2/2
+
 
 If you want to add your own password, you can do so by modifying the credentialsDatabase.txt 
 file in JSON format in the java project.
